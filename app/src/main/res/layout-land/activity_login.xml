@@ -27,11 +27,11 @@
         android:layout_marginTop="17dp"
         android:contentDescription="@string/login_image_beschrijving"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_titelText"
-        app:layout_constraintVertical_bias="0.091"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/black" />
 
     <TextView
@@ -39,14 +39,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="67dp"
         android:layout_marginTop="34dp"
         android:fontFamily="serif"
         android:text="@string/inlog_tekst"
         app:layout_constraintBottom_toTopOf="@+id/Login_Button_id"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_logo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.203" />
 
     <EditText
         android:id="@+id/Login_number_id"
@@ -57,13 +57,13 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:fontFamily="serif"
         android:inputType="number"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/Login_Button_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintLeft_toRightOf="@+id/LoginText"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_logo" />
+        app:layout_constraintRight_toLeftOf="@+id/Login_Button_id"
+        app:layout_constraintTop_toBottomOf="@+id/Login_logo"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Login_Button_id"
@@ -78,6 +78,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_logo"
-        app:layout_constraintVertical_bias="0.708" />
-  
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.793" />
+
 </android.support.constraint.ConstraintLayout>
