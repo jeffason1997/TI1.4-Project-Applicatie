@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
+    <string name="welkom_tekst">Welcome to the Essteling</string>
+    <string name="inlog_tekst">Inlog ID/pass number:</string>
+    <string name="inlog_button">Log in</string>
+    <string name="login_image_beschrijving">generic picture</string>
 </resources>
