@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TI1.4-Applicatie</string>
+    <string name="welkom_tekst">Welkom bij de Essteling</string>
+    <string name="inlog_tekst">Inlog ID/pasnummer:</string>
+    <string name="inlog_button">inloggen</string>
+    <string name="login_image_beschrijving">algemeen plaatje</string>
+</resources>
