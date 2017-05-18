@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial-black.ttf");
-        tvHead = (TextView) findViewById(R.id.textView_welkom);
+        tvHead = (TextView) findViewById(R.id.Login_titelText);
         tvHead.setTypeface(type);
       
         this.btn = (Button) findViewById(R.id.button);
