@@ -1,5 +1,11 @@
 package com.b2.projectgroep.ti14_applicatie;
 
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +13,9 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextView tvHead;
+   private Button btn;
+   TextView tvHead;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,5 +25,26 @@ public class LoginActivity extends AppCompatActivity {
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial-black.ttf");
         tvHead = (TextView) findViewById(R.id.textView_welkom);
         tvHead.setTypeface(type);
+      
+        this.btn = (Button) findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), RideActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
