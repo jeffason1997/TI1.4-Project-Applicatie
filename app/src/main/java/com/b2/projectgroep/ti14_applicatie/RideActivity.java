@@ -22,7 +22,8 @@ public class RideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride);
 
-        ride.add(new Ride("Python", "Achterbaan", R.drawable.python_example_picture));
+        ride.add(new Ride("Python", "Achterbaan", R.drawable.python
+        ));
         ride.add(new Ride("Draaimolen", "rustige attractie", R.drawable.draaimolen_nostalgisch));
         ride.add(new Ride("Houten achtbaan", "Achtbaan", R.drawable.draaimolen_nostalgisch));
         ride.add(new Ride("Lange Jan", "rustige attractie", R.drawable.draaimolen_nostalgisch));

@@ -22,11 +22,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial-black.ttf");
+        Typeface type = Typeface.createFromAsset(getAssets(),"Fonts/Arial_Black.ttf");
         tvHead = (TextView) findViewById(R.id.Login_titelText);
         tvHead.setTypeface(type);
       
-        this.btn = (Button) findViewById(R.id.button);
+        this.btn = (Button) findViewById(R.id.Login_Button_id);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
