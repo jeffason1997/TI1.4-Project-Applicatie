@@ -5,4 +5,17 @@
     <string name="inlog_tekst">Inlog ID/pasnummer:</string>
     <string name="inlog_button">inloggen</string>
     <string name="login_image_beschrijving">algemeen plaatje</string>
+
+    <string name="testRide_python_title">Python</string>
+    <string name="testRide_python_type">Achtbaan</string>
+    <string name="testRide_python_information">Beschrijving van de python hier</string>
+    <string name="testRide_carousel_title">Draaimolen</string>
+    <string name="testRide_carousel_type">Rustig ritje</string>
+    <string name="testRide_carousel_information">Beschrijving van de draaimolen hier</string>
+    <string name="testRide_wooden_coaster_title">Houten achtbaan</string>
+    <string name="testRide_wooden_coaster_type">Achtbaan</string>
+    <string name="testRide_wooden_coaster_information">Beschrijving van de houten achtbaan hier</string>
+    <string name="testRide_langejan_title">Lange Jan</string>
+    <string name="testRide_lange_jan_type">Onstpannend / sprookje</string>
+    <string name="testRide_lange_jan_information">Beschrijving van Lange Jan hier</string>
 </resources>

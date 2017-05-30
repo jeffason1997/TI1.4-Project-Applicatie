@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class RideClicked extends AppCompatActivity {
+public class RideDetailedInformation extends AppCompatActivity {
 
     private Ride ride;
     private TextView name;
