@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.b2.projectgroep.ti14_applicatie">
-    
-    <uses-permission android:name="android.permission.NFC"/>
 
+    <uses-permission android:name="android.permission.NFC" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RideActivity" />
+        <activity android:name=".RideDetailedInformation" />
+        <activity android:name=".Employee_chooseActivity" />
+        <activity android:name=".Employee_readActivity" />
+        <activity android:name=".Employee_setupActivity"></activity>
     </application>
 
 </manifest>
