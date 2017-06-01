@@ -15,7 +15,7 @@
     <string name="testRide_lange_jan_type">Relaxing</string>
     <string name="testRide_lange_jan_information">Description of lange jan here</string>
     <string name="wrong_login">Wrong ID</string>
-    <string name="inlog_text">Inlog ID/Pass Number:</string>
+    <string name="inlog_text">Login ID/Pass number:</string>
     <string name="login_image_description">Generic picture</string>
     <string name="welcome_text">Welcome to the Essteling</string>
 </resources>

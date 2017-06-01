@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), RideActivity.class);
                     startActivity(i);
                 } else {
-                    Toast.makeText(getApplicationContext(),R.string.wrong_login, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),R.string.wrong_login, Toast.LENGTH_SHORT).show();
                 }
             }
         });
