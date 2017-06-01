@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
-    <string name="welkom_tekst">Welkom bij de Essteling</string>
-    <string name="inlog_tekst">Inlog ID/pasnummer:</string>
     <string name="inlog_button">inloggen</string>
-    <string name="login_image_beschrijving">algemeen plaatje</string>
 
     <string name="testRide_python_title">Python</string>
     <string name="testRide_python_type">Achtbaan</string>
@@ -18,4 +15,8 @@
     <string name="testRide_langejan_title">Lange Jan</string>
     <string name="testRide_lange_jan_type">Onstpannend / sprookje</string>
     <string name="testRide_lange_jan_information">Beschrijving van Lange Jan hier</string>
+    <string name="wrong_login">Verkeerde ID</string>
+    <string name="inlog_text">Inlog ID/Pasnummer:</string>
+    <string name="login_image_description">Algemeen plaatje</string>
+    <string name="welcome_text">Welkom bij de Essteling</string>
 </resources>
