@@ -4,4 +4,17 @@
     <string name="inlog_tekst">Inlog ID/pass number:</string>
     <string name="inlog_button">Log in</string>
     <string name="login_image_beschrijving">generic picture</string>
+
+    <string name="testRide_python_title">Python</string>
+    <string name="testRide_python_type">Rollercoaster</string>
+    <string name="testRide_python_information">Description of the python here</string>
+    <string name="testRide_carousel_title">Carousel</string>
+    <string name="testRide_carousel_type">Relaxing ride</string>
+    <string name="testRide_carousel_information">Description of the carousel here</string>
+    <string name="testRide_wooden_coaster_title">Wooden rollercoaster</string>
+    <string name="testRide_wooden_coaster_type">Rollercoaster</string>
+    <string name="testRide_wooden_coaster_information">Description of the wooden rollercoaster here</string>
+    <string name="testRide_langejan_title">Long Jan</string>
+    <string name="testRide_lange_jan_type">Relaxing</string>
+    <string name="testRide_lange_jan_information">Description of lange jan here</string>
 </resources>
