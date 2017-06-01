@@ -2,6 +2,8 @@ package com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses;
 
 import android.os.AsyncTask;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -13,10 +15,11 @@ import java.net.URL;
  * Created by dionb on 1-6-2017.
  */
 
-public class TableTask extends AsyncTask<String, Void, String> {
+public class InsertIntoTableTask extends AsyncTask<String, Void, String> {
     TableTaskListener listener;
+    String urlString = "https://dion-bartelen.000webhostapp.com/Essteling/post.php";
 
-    public TableTask(TableTaskListener listener) {
+    public InsertIntoTableTask(TableTaskListener listener) {
         this.listener = listener;
     }
 
@@ -24,7 +27,7 @@ public class TableTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... params) {
         String answer = "";
         try {
-            URL url = new URL(params[0]);
+            URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestMethod("POST");
@@ -32,7 +35,7 @@ public class TableTask extends AsyncTask<String, Void, String> {
             connection.connect();
 
             DataOutputStream output = new DataOutputStream(connection.getOutputStream());
-            output.writeBytes(params[1]);
+            output.writeBytes(params[0]);
             DataInputStream input = new DataInputStream(connection.getInputStream());
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
@@ -52,6 +55,10 @@ public class TableTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        listener.onSuccesMessage(s);
+        if(s.equals("Succes")) {
+            listener.onSuccesMessage(s);
+        } else {
+            listener.onErrorMessage(s);
+        }
     }
 }

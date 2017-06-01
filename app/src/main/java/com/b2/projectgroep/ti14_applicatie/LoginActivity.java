@@ -2,23 +2,20 @@ package com.b2.projectgroep.ti14_applicatie;
 
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.TableTask;
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.TableTaskListener;
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
-public class LoginActivity extends AppCompatActivity implements TableTaskListener {
+public class LoginActivity extends AppCompatActivity {
 
    private Button btn;
    TextView tvHead;
@@ -52,27 +49,6 @@ public class LoginActivity extends AppCompatActivity implements TableTaskListene
                 }
             }
         });
-
-        //TableTask tt = new TableTask(this);
-        //Database aanmaken
-        //String params[] = new String[] {"http://dion-bartelen.000webhostapp.com/Essteling/setupTable.php", "{\"cardId\":\"card3\"}"};
-        //Database verwijderen
-        //String params[] = new String[] {"http://dion-bartelen.000webhostapp.com/Essteling/deleteTable.php", "{\"cardId\":\"card3\"}"};
-        //Database ophalen
-        //String params[] = new String[] {"http://dion-bartelen.000webhostapp.com/Essteling/get.php", "{\"cardId\":\"card3\"}"};
-        //Aan database toevoegen
-        //String params[] = new String[] {"https://dion-bartelen.000webhostapp.com/Essteling/post.php", "{\"cardId\":\"card3\", \"time\":\"1120\", \"rideName\":\"Python\"}"};
-        //tt.execute(params);
-    }
-
-    @Override
-    public void onSuccesMessage(String s) {
-        Log.i("Message", s);
-    }
-
-    @Override
-    public void onErrorMessage(String s) {
-        Log.i("Message", s);
     }
 }
 
