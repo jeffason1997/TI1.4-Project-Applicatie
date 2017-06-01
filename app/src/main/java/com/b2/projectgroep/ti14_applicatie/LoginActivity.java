@@ -2,15 +2,11 @@ package com.b2.projectgroep.ti14_applicatie;
 
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         tvHead.setTypeface(type);
         logincode = (EditText) findViewById(R.id.Login_number_id);
       
-        this.btn = (Button) findViewById(R.id.Login_Button_id);
+        this.btn = (Button) findViewById(R.id.Eread_confirm_button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
