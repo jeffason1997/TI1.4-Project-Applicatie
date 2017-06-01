@@ -18,4 +18,6 @@
     <string name="inlog_text">Login ID/Pass number:</string>
     <string name="login_image_description">Generic picture</string>
     <string name="welcome_text">Welcome to the Essteling</string>
+
+    <string name="error_loading_data">Error whilst loading data</string>
 </resources>
