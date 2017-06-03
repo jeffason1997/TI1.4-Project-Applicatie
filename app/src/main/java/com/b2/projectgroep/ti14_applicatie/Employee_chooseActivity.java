@@ -5,19 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Employee_chooseActivity extends AppCompatActivity {
 
-    Button read;
-    Button setup;
+    ImageButton read;
+    ImageButton setup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_choose);
 
-        read = (Button) findViewById(R.id.choose_read_id);
-        setup = (Button) findViewById(R.id.choose_setup_id);
+        read = (ImageButton) findViewById(R.id.choose_read_id);
+        setup = (ImageButton) findViewById(R.id.choose_setup_id);
         read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

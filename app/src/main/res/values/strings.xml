@@ -18,6 +18,12 @@
     <string name="inlog_text">Login ID/Pass number:</string>
     <string name="login_image_description">Generic picture</string>
     <string name="welcome_text">Welcome to the Essteling</string>
-
+    <string name="Eread_name_parent">Name Parent/Guardian</string>
+    <string name="Eread_phonenumber">Phonenumber</string>
+    <string name="Eread_name_child">Name Child</string>
+    <string name="Echoose_cardnumber">Card Number</string>
+    <string name="Esetup_name_parent">Name</string>
+    <string name="Esetup_surname_parent">Surname</string>
+    <string name="Echoose_confirm_button">Confirm</string>
     <string name="error_loading_data">Error whilst loading data</string>
 </resources>

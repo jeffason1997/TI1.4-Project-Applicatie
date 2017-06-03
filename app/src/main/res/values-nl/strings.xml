@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
     <string name="inlog_button">inloggen</string>
-
     <string name="testRide_python_title">Python</string>
     <string name="testRide_python_type">Achtbaan</string>
     <string name="testRide_python_information">Beschrijving van de python hier</string>
@@ -19,6 +18,12 @@
     <string name="inlog_text">Inlog ID/Pasnummer:</string>
     <string name="login_image_description">Algemeen plaatje</string>
     <string name="welcome_text">Welkom bij de Essteling</string>
-
+    <string name="Eread_name_parent">Naam Ouder/Verzorger</string>
+    <string name="Eread_phonenumber">Telefoonnummer</string>
+    <string name="Eread_name_child">Naam Kind</string>
+    <string name="Echoose_cardnumber">Kaart Nummer</string>
+    <string name="Esetup_name_parent">Naam</string>
+    <string name="Esetup_surname_parent">Achternaam</string>
+    <string name="Echoose_confirm_button">Bevestig</string>
     <string name="error_loading_data">Error tijdens het laden</string>
 </resources>
