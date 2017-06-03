@@ -1,6 +1,12 @@
 package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
+<<<<<<< HEAD:app/src/main/java/com/b2/projectgroep/ti14_applicatie/RideClasses/Ride.java
 import com.b2.projectgroep.ti14_applicatie.R;
+=======
+import android.content.Context;
+import android.support.annotation.NonNull;
+import android.util.Log;
+>>>>>>> refs/remotes/origin/master:app/src/main/java/com/b2/projectgroep/ti14_applicatie/Ride.java
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,11 +15,12 @@ import java.util.ArrayList;
  * Created by harm on 18-5-2017.
  */
 
-public class Ride implements Serializable{
+public class Ride implements Serializable {
     private int name;
     private int catogoryRide;
     private int rideImage;
     private int information;
+    private String time = "";
 
     public Ride(int name, int catogoryRide, int information, int rideImage) {
         this.name = name;
@@ -46,12 +53,16 @@ public class Ride implements Serializable{
         this.rideImage = rideImage;
     }
 
+    public void setTime(String s) {this.time = s;}
+
     @Override
     public String toString() {
         return "Ride{" +
-                "name='" + name + '\'' +
-                ", catogoryRide='" + catogoryRide + '\'' +
+                "name=" + name +
+                ", catogoryRide=" + catogoryRide +
                 ", rideImage=" + rideImage +
+                ", information=" + information +
+                ", time='" + time + '\'' +
                 '}';
     }
 
@@ -62,5 +73,20 @@ public class Ride implements Serializable{
         rides.add(new Ride(R.string.testRide_wooden_coaster_title, R.string.testRide_wooden_coaster_type, R.string.testRide_wooden_coaster_information, R.drawable.draaimolen_nostalgisch));
         rides.add(new Ride(R.string.testRide_langejan_title, R.string.testRide_lange_jan_type, R.string.testRide_lange_jan_information, R.drawable.draaimolen_nostalgisch));
         return rides;
+    }
+
+    public static Ride getRideFromName(int name) {
+        Log.i("Message", name + "   " + R.string.testRide_python_title);
+        ArrayList<Ride> rides = getTestRides();
+        for (int x = 0; x < rides.size(); x++) {
+            if(rides.get(x).getName() == name) {
+                Log.i("Message", "ride found");
+                return rides.get(x);
+            }
+        }
+
+        Log.i("Message", "ride not found");
+
+        return null;
     }
 }

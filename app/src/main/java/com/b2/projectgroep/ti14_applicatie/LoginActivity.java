@@ -12,8 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_chooseActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.RideActivity;
+=======
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
+>>>>>>> refs/remotes/origin/master
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         tvHead.setTypeface(type);
         logincode = (EditText) findViewById(R.id.Login_number_id);
       
-        this.btn = (Button) findViewById(R.id.Login_Button_id);
+        this.btn = (Button) findViewById(R.id.Eread_confirm_button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
 

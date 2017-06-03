@@ -7,12 +7,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
 import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.util.ArrayList;
 
-public class RideActivity extends AppCompatActivity {
+public class RideActivity extends AppCompatActivity implements GetTableTaskListener {
 
     ArrayList<Ride> rides = new ArrayList<>();
     ListView ride_listView;
@@ -24,7 +28,7 @@ public class RideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride);
 
-        rides = Ride.getTestRides();
+        rides = new ArrayList<>();
 
         ride_listView =  (ListView) findViewById(R.id.ride_lv);
 
@@ -40,5 +44,22 @@ public class RideActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        GetTableTask getTableTask = new GetTableTask(this);
+        String[] params = new String[] {"{\"cardId\":\"card3\"}"};
+        getTableTask.execute(params);
+    }
+
+    @Override
+    public void onRideAvailable(Ride r) {
+        if(!rides.contains(r) && r != null) {
+            rides.add(r);
+            mAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onErrorMessage(String s) {
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_loading_data), Toast.LENGTH_LONG).show();
     }
 }
