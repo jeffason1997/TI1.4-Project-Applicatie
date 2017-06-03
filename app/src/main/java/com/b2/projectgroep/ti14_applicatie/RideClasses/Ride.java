@@ -1,6 +1,6 @@
-package com.b2.projectgroep.ti14_applicatie;
+package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
-import android.content.Context;
+import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;

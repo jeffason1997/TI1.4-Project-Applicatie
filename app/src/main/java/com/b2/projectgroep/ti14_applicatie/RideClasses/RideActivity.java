@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie;
+package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.util.ArrayList;
 

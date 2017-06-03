@@ -1,14 +1,15 @@
-package com.b2.projectgroep.ti14_applicatie;
+package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.b2.projectgroep.ti14_applicatie.R;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import java.util.ArrayList;
 
