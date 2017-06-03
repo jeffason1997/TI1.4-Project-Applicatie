@@ -8,11 +8,17 @@ import android.view.View;
 import android.widget.Button;
 import android.graphics.Typeface;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_chooseActivity;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.RideActivity;
+=======
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
+>>>>>>> refs/remotes/origin/master
 
 public class LoginActivity extends AppCompatActivity {
 

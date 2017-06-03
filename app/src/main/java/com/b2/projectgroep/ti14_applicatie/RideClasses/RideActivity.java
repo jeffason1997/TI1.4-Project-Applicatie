@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie;
+package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
+
+import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.util.ArrayList;
 

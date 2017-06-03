@@ -19,12 +19,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERD"
+                android:resource="@xml/nfc_tech_filter"/>
         </activity>
-        <activity android:name=".RideActivity" />
-        <activity android:name=".RideDetailedInformation" />
-        <activity android:name=".Employee_chooseActivity" />
-        <activity android:name=".Employee_readActivity" />
-        <activity android:name=".Employee_setupActivity"></activity>
+        <activity android:name=".RideClasses.RideActivity" />
+        <activity android:name=".RideClasses.RideDetailedInformation" />
+        <activity android:name=".EmployeeClasses.Employee_chooseActivity" />
+        <activity android:name=".EmployeeClasses.Employee_readActivity" />
+        <activity android:name=".EmployeeClasses.Employee_setupActivity"></activity>
     </application>
 
 </manifest>
