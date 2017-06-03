@@ -1,12 +1,11 @@
 package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
-<<<<<<< HEAD:app/src/main/java/com/b2/projectgroep/ti14_applicatie/RideClasses/Ride.java
+
 import com.b2.projectgroep.ti14_applicatie.R;
-=======
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
->>>>>>> refs/remotes/origin/master:app/src/main/java/com/b2/projectgroep/ti14_applicatie/Ride.java
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
