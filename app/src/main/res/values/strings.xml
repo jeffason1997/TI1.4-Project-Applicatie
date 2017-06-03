@@ -25,4 +25,5 @@
     <string name="Esetup_name_parent">Name</string>
     <string name="Esetup_surname_parent">Surname</string>
     <string name="Echoose_confirm_button">Confirm</string>
+    <string name="error_loading_data">Error whilst loading data</string>
 </resources>

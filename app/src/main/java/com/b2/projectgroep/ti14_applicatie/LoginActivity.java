@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
+
 public class LoginActivity extends AppCompatActivity {
 
    private Button btn;
@@ -45,7 +48,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
 

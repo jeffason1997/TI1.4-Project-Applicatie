@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
     <string name="inlog_button">inloggen</string>
-
     <string name="testRide_python_title">Python</string>
     <string name="testRide_python_type">Achtbaan</string>
     <string name="testRide_python_information">Beschrijving van de python hier</string>
@@ -26,4 +25,5 @@
     <string name="Esetup_name_parent">Naam</string>
     <string name="Esetup_surname_parent">Achternaam</string>
     <string name="Echoose_confirm_button">Bevestig</string>
+    <string name="error_loading_data">Error tijdens het laden</string>
 </resources>
