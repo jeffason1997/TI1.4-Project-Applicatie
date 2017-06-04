@@ -2,7 +2,7 @@ package com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses;
 
 import android.os.AsyncTask;
 
-import com.b2.projectgroep.ti14_applicatie.Ride;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import org.json.JSONArray;
 import org.json.JSONException;

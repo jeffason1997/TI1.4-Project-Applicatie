@@ -54,7 +54,7 @@ public class Employee_setupActivity extends AppCompatActivity {
             return;
         }
 
-        NFCButt = (Button) findViewById(R.id.Login_Button_id);
+        NFCButt = (Button) findViewById(R.id.Esetup_confirm_button);
         NFCButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
