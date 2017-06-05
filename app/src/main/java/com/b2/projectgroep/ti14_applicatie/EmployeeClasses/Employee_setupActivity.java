@@ -15,17 +15,21 @@ import android.nfc.tech.NdefFormatable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.CreateTableTask;
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.TableTaskListener;
 import com.b2.projectgroep.ti14_applicatie.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.util.Locale;
 
-public class Employee_setupActivity extends AppCompatActivity {
+public class Employee_setupActivity extends AppCompatActivity implements TableTaskListener {
 
     public static final String MIME_TEXT_PLAIN = "text/plain";
     private NdefMessage message = null;
@@ -204,11 +208,32 @@ public class Employee_setupActivity extends AppCompatActivity {
             json.put("cardNumer", cardNumber.getText().toString());
             message = json.toString();
 
+            createCorrespondingTable(cardNumber.getText().toString());
         }
 
         System.out.println(message);
 
         return message;
 
+    }
+
+    //Not tested
+    private void createCorrespondingTable(String s) {
+        String toSend = "{\"cardId\":\"" + s + "\"}";
+        CreateTableTask createTask = new CreateTableTask(this);
+        String[] params = new String[] {toSend};
+        createTask.execute(params);
+    }
+
+    //Not tested
+    @Override
+    public void onSuccesMessage(String s) {
+        Log.i("Message", s);
+    }
+
+    //Not tested
+    @Override
+    public void onErrorMessage(String s) {
+        Log.i("Message", s);
     }
 }
