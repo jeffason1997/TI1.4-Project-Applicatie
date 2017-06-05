@@ -1,7 +1,9 @@
 package com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
+import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import org.json.JSONArray;
@@ -29,7 +31,7 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String answer = "";
+        String answer = "Start";
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -52,7 +54,7 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
             output.close();
         } catch (Exception e) {
             e.printStackTrace();
-            listener.onErrorMessage("Error while getting data");
+            return "Error while getting data";
         }
         return answer;
     }
@@ -63,11 +65,13 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
             JSONArray ja = new JSONArray(s);
             for(int x = 0; x < ja.length(); x++) {
                 JSONObject ride = ja.getJSONObject(x);
-                Ride r = Ride.getRideFromName(ride.getInt("rideName"));
-                //r.setTime(ride.getString("time"));
-                listener.onRideAvailable(r);
+                Ride r = Ride.getRideFromName(ride.getString("rideName"));
+                String time = ride.getString("time");
+                PersonalActivity activity = new PersonalActivity(time, r);
+                listener.onRideAvailable(activity);
             }
         } catch (JSONException e) {
+            e.printStackTrace();
             listener.onErrorMessage(s);
         }
     }

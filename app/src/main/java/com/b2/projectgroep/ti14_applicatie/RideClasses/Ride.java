@@ -9,6 +9,7 @@ import android.util.Log;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by harm on 18-5-2017.
@@ -19,7 +20,6 @@ public class Ride implements Serializable {
     private int catogoryRide;
     private int rideImage;
     private int information;
-    private String time = "";
 
     public Ride(int name, int catogoryRide, int information, int rideImage) {
         this.name = name;
@@ -52,7 +52,13 @@ public class Ride implements Serializable {
         this.rideImage = rideImage;
     }
 
-    public void setTime(String s) {this.time = s;}
+    public int getInformation() {
+        return information;
+    }
+
+    public void setInformation(int information) {
+        this.information = information;
+    }
 
     @Override
     public String toString() {
@@ -61,31 +67,38 @@ public class Ride implements Serializable {
                 ", catogoryRide=" + catogoryRide +
                 ", rideImage=" + rideImage +
                 ", information=" + information +
-                ", time='" + time + '\'' +
                 '}';
     }
 
-    public static ArrayList<Ride> getTestRides() {
-        ArrayList<Ride> rides = new ArrayList<>();
-        rides.add(new Ride(R.string.testRide_python_title, R.string.testRide_python_type, R.string.testRide_python_information, R.drawable.python));
-        rides.add(new Ride(R.string.testRide_carousel_title, R.string.testRide_carousel_type, R.string.testRide_carousel_information, R.drawable.draaimolen_nostalgisch));
-        rides.add(new Ride(R.string.testRide_wooden_coaster_title, R.string.testRide_wooden_coaster_type, R.string.testRide_wooden_coaster_information, R.drawable.draaimolen_nostalgisch));
-        rides.add(new Ride(R.string.testRide_langejan_title, R.string.testRide_lange_jan_type, R.string.testRide_lange_jan_information, R.drawable.draaimolen_nostalgisch));
-        return rides;
+    public static HashMap<String, Ride> getTestRides() {
+        HashMap<String, Ride> toReturn = new HashMap<>();
+        toReturn.put("Python", new Ride(R.string.testRide_python_title, R.string.testRide_python_type, R.string.testRide_python_information, R.drawable.python));
+        toReturn.put("Draaimolen", new Ride(R.string.testRide_carousel_title, R.string.testRide_carousel_type, R.string.testRide_carousel_information, R.drawable.draaimolen_nostalgisch));
+        toReturn.put("Houten Achtbaan", new Ride(R.string.testRide_wooden_coaster_title, R.string.testRide_wooden_coaster_type, R.string.testRide_wooden_coaster_information, R.drawable.draaimolen_nostalgisch));
+        toReturn.put("Lange Jan", new Ride(R.string.testRide_langejan_title, R.string.testRide_lange_jan_type, R.string.testRide_lange_jan_information, R.drawable.draaimolen_nostalgisch));
+        return toReturn;
     }
 
-    public static Ride getRideFromName(int name) {
-        Log.i("Message", name + "   " + R.string.testRide_python_title);
-        ArrayList<Ride> rides = getTestRides();
-        for (int x = 0; x < rides.size(); x++) {
-            if(rides.get(x).getName() == name) {
-                Log.i("Message", "ride found");
-                return rides.get(x);
-            }
+    public static Ride getRideFromName(String name) {
+        HashMap<String, Ride> rides = getTestRides();
+        if(rides.containsKey(name)) {
+            return rides.get(name);
+        } else {
+            return null;
+        }
+    }
+
+    public static String getKeyFromRide(Ride ride) {
+        if(ride.getName() == R.string.testRide_python_title) {
+            return "Python";
+        } else if(ride.getName() == R.string.testRide_carousel_title) {
+            return "Draaimolen";
+        } else if(ride.getName() == R.string.testRide_wooden_coaster_title) {
+            return "Houten Achtbaan";
+        } else if(ride.getName() == R.string.testRide_langejan_title) {
+            return "Lange Jan";
         }
 
-        Log.i("Message", "ride not found");
-
-        return null;
+        return "";
     }
 }
