@@ -205,7 +205,7 @@ public class Employee_setupActivity extends AppCompatActivity implements TableTa
             json.put("phoneNumber", phoneNumber.getText().toString());
             json.put("nameC", nameChild.getText().toString());
             json.put("surnameC", surChild.getText().toString());
-            json.put("cardNumer", cardNumber.getText().toString());
+            json.put("cardNummer", cardNumber.getText().toString());
             message = json.toString();
 
             createCorrespondingTable(cardNumber.getText().toString());

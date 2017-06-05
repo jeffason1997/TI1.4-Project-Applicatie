@@ -1,8 +1,12 @@
 package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,6 +33,8 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride);
 
+        String cardNumber = getIntent().getExtras().getString("cardId");
+
         personalActivities = new ArrayList<>();
 
         ride_listView =  (ListView) findViewById(R.id.ride_lv);
@@ -47,7 +53,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         });
 
         GetTableTask getTableTask = new GetTableTask(this);
-        String[] params = new String[] {"{\"cardId\":\"card3\"}"};
+        String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
         getTableTask.execute(params);
     }
 
@@ -61,7 +67,11 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     }
 
     @Override
-    public void onErrorMessage(String s) {
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_loading_data), Toast.LENGTH_LONG).show();
+    public void onErrorMessage(final String s) {
+        if(s.equals("No results")) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_no_data_returned), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_loading_data), Toast.LENGTH_LONG).show();
+        }
     }
 }

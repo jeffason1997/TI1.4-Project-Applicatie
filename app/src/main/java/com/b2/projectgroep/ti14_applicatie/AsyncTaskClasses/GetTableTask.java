@@ -1,6 +1,7 @@
 package com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
@@ -30,7 +31,7 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String answer = "";
+        String answer = "Start";
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -53,7 +54,7 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
             output.close();
         } catch (Exception e) {
             e.printStackTrace();
-            listener.onErrorMessage("Error while getting data");
+            return "Error while getting data";
         }
         return answer;
     }
@@ -70,6 +71,7 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
                 listener.onRideAvailable(activity);
             }
         } catch (JSONException e) {
+            e.printStackTrace();
             listener.onErrorMessage(s);
         }
     }

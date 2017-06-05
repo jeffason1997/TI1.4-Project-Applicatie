@@ -42,11 +42,12 @@ public class LoginActivity extends AppCompatActivity {
                 if (logincode.getText().toString().equals(loginEmployee)) {
                     Intent i = new Intent(getApplicationContext(), Employee_chooseActivity.class);
                     startActivity(i);
-                } else if (logincode.getText().toString().equals(loginGuest)) {
-                    Intent i = new Intent(getApplicationContext(), PersonalListActivity.class);
-                    startActivity(i);
                 } else if (logincode.getText().toString().equals(loginAtLocation)) {
                     Intent i = new Intent(getApplicationContext(), AtRideActivity.class);
+                    startActivity(i);
+                } else if (!logincode.getText().toString().equals("")) {
+                    Intent i = new Intent(getApplicationContext(), PersonalListActivity.class);
+                    i.putExtra("cardId", "card" + logincode.getText().toString());
                     startActivity(i);
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.wrong_login, Toast.LENGTH_SHORT).show();
