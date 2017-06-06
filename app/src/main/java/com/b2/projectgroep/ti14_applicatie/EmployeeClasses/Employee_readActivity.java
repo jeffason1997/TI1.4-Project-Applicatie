@@ -33,12 +33,17 @@ public class Employee_readActivity extends AppCompatActivity {
     public static final String TAG = "NfcDemo";
     private TextView parentName,parentSur,phoneNumber,childName,childSur;
     private NfcAdapter mNfcAdapter;
+    private ProgressDialog dialog;
     Tag currentTag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_read);
+
+        dialog = new ProgressDialog(Employee_readActivity.this);
+        dialog.setMessage("Tag NFC Card please");
+        dialog.show();
 
         parentName = (TextView) findViewById(R.id.Eread_nameParent_id);
         parentSur = (TextView) findViewById(R.id.Eread_surnameParent_id);
@@ -82,6 +87,7 @@ public class Employee_readActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
+        dialog.dismiss();
         currentTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
         handleIntent(intent);
     }
