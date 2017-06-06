@@ -1,7 +1,13 @@
 package com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
+import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -15,22 +21,21 @@ import java.net.URL;
  * Created by dionb on 1-6-2017.
  */
 
-public class InsertIntoTableTask extends AsyncTask<String, Void, String> {
-    TableTaskListener listener;
-    
-    //String urlString = "https://dion-bartelen.000webhostapp.com/Essteling/post.php";
+public class GetTableTask extends AsyncTask<String, Void, String> {
+    GetTableTaskListener listener;
+
+    //String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/get.php";
 
     //temp url
-    String urlString = "http://82.101.217.193/Essteling/post.php";
+    String urlString = "http://82.101.217.193/Essteling/get.php";
 
-
-    public InsertIntoTableTask(TableTaskListener listener) {
+    public GetTableTask(GetTableTaskListener listener) {
         this.listener = listener;
     }
 
     @Override
     protected String doInBackground(String... params) {
-        String answer = "";
+        String answer = "Start";
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -60,9 +65,17 @@ public class InsertIntoTableTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        if(s.equals("Succes")) {
-            listener.onSuccesMessage(s);
-        } else {
+        try {
+            JSONArray ja = new JSONArray(s);
+            for(int x = 0; x < ja.length(); x++) {
+                JSONObject ride = ja.getJSONObject(x);
+                Ride r = Ride.getRideFromName(ride.getString("rideName"));
+                String time = ride.getString("time");
+                PersonalActivity activity = new PersonalActivity(time, r);
+                listener.onRideAvailable(activity);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
             listener.onErrorMessage(s);
         }
     }

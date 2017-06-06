@@ -3,8 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#000000</color>
-<<<<<<< Updated upstream
-=======
     <color name="colorGreen">#008000</color>
->>>>>>> Stashed changes
+    <color name="colorJeffGreen">#003300</color>
 </resources>

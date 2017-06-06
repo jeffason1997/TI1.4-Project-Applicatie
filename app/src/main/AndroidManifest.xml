@@ -3,26 +3,43 @@
     package="com.b2.projectgroep.ti14_applicatie">
 
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="KidSecure"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERD"
+                android:resource="@xml/nfc_tech_filter" />
         </activity>
-        <activity android:name=".RideActivity" />
-        <activity android:name=".RideDetailedInformation" />
-        <activity android:name=".Employee_chooseActivity" />
-        <activity android:name=".Employee_readActivity" />
-        <activity android:name=".Employee_setupActivity"></activity>
+        <activity android:name=".RideClasses.PersonalListActivity" />
+        <activity android:name=".RideClasses.PersonalActivityDetailedInformation" />
+        <activity android:name=".EmployeeClasses.Employee_chooseActivity" />
+        <activity android:name=".EmployeeClasses.Employee_readActivity" />
+        <activity android:name=".EmployeeClasses.Employee_setupActivity" />
+        <activity android:name=".AtRide.AtRideActivity" />
+        <activity android:name=".AtRide.AtRideListeningActivity"></activity>
     </application>
 
 </manifest>

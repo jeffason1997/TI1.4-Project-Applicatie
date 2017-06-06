@@ -15,16 +15,15 @@ import java.net.URL;
  * Created by dionb on 1-6-2017.
  */
 
-public class InsertIntoTableTask extends AsyncTask<String, Void, String> {
+public class DeleteTableTask extends AsyncTask<String, Void, String> {
     TableTaskListener listener;
-    
-    //String urlString = "https://dion-bartelen.000webhostapp.com/Essteling/post.php";
+
+    //String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/deleteTable.php";
 
     //temp url
-    String urlString = "http://82.101.217.193/Essteling/post.php";
+    String urlString = "http://82.101.217.193/Essteling/deleteTable.php";
 
-
-    public InsertIntoTableTask(TableTaskListener listener) {
+    public DeleteTableTask(TableTaskListener listener) {
         this.listener = listener;
     }
 
