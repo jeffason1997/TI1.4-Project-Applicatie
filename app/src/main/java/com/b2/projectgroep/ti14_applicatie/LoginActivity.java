@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.graphics.Typeface;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         Typeface type = Typeface.createFromAsset(getAssets(),"Fonts/Arial_Black.ttf");
         tvHead = (TextView) findViewById(R.id.Login_titelText);
