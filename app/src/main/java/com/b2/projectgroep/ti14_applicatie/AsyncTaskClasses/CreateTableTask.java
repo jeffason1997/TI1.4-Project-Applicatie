@@ -17,7 +17,11 @@ import java.net.URL;
 
 public class CreateTableTask extends AsyncTask<String, Void, String> {
     TableTaskListener listener;
-    String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/setupTable.php";
+
+    //String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/setupTable.php";
+
+    //temp url
+    String urlString = "http://82.101.217.193/Essteling/setupTable.php";
 
     public CreateTableTask(TableTaskListener listener) {
         this.listener = listener;
@@ -48,7 +52,7 @@ public class CreateTableTask extends AsyncTask<String, Void, String> {
             output.close();
         } catch (Exception e) {
             e.printStackTrace();
-            listener.onErrorMessage("Error while getting data");
+            return "Error while getting data";
         }
         return answer;
     }
