@@ -27,4 +27,5 @@
     <string name="Echoose_confirm_button">Bevestig</string>
     <string name="error_no_data_returned">Er zijn nog geen activiteiten bekend.\nControleer of je het goede kaart nummer ingetypt hebt.</string>
     <string name="error_loading_data">Error tijdens het laden</string>
+    <string name="lv_kind_tijd">Uw kind was hier om</string>
 </resources>
