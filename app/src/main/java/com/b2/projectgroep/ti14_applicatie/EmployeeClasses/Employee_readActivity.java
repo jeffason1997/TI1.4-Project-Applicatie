@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -13,6 +14,8 @@ import android.nfc.tech.Ndef;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +43,13 @@ public class Employee_readActivity extends AppCompatActivity {
         parentName = (TextView) findViewById(R.id.Eread_nameParent_id);
         parentSur = (TextView) findViewById(R.id.Eread_surnameParent_id);
         phoneNumber = (TextView) findViewById(R.id.Eread_phonenumber_id);
+        phoneNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(phoneNumber.getText().toString().contains("06"))
+                dailContactPhone(phoneNumber.getText().toString());
+            }
+        });
         childName = (TextView) findViewById(R.id.Eread_nameChild_id);
         childSur = (TextView) findViewById(R.id.Eread_surnameChild_id);
 
@@ -51,6 +61,10 @@ public class Employee_readActivity extends AppCompatActivity {
         }
 
         handleIntent(getIntent());
+    }
+
+    private void dailContactPhone(String number){
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", number, null)));
     }
 
 
@@ -191,7 +205,10 @@ public class Employee_readActivity extends AppCompatActivity {
                  }
                 parentName.setText(nameParent);
                 parentSur.setText(surParent);
-                phoneNumber.setText(phoneNum);
+                phoneNumber.setTextColor(getResources().getColor(R.color.colorBlue));
+                SpannableString content = new SpannableString(phoneNum);
+                content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+                phoneNumber.setText(content);
                 childName.setText(nameChild);
                 childSur.setText(surChild);
             }
