@@ -88,7 +88,7 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
     @Override
     public void onSuccesMessage(String s) {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
-        iv.setBackgroundColor(Color.rgb(0, 150, 0));
+        iv.setBackgroundColor(getResources().getColor(R.color.colorGreen));
         iv.postDelayed(new Runnable() {
             @Override
             public void run() {
