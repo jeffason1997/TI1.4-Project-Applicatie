@@ -24,10 +24,10 @@ import java.net.URL;
 public class GetTableTask extends AsyncTask<String, Void, String> {
     GetTableTaskListener listener;
 
-    //String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/get.php";
+    String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/get.php";
 
     //temp url
-    String urlString = "http://82.101.217.193/Essteling/get.php";
+    //String urlString = "http://82.101.217.193/Essteling/get.php";
 
     public GetTableTask(GetTableTaskListener listener) {
         this.listener = listener;

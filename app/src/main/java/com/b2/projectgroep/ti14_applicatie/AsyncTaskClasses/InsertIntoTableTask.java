@@ -18,10 +18,10 @@ import java.net.URL;
 public class InsertIntoTableTask extends AsyncTask<String, Void, String> {
     TableTaskListener listener;
     
-    //String urlString = "https://dion-bartelen.000webhostapp.com/Essteling/post.php";
+    String urlString = "https://dion-bartelen.000webhostapp.com/Essteling/post.php";
 
     //temp url
-    String urlString = "http://82.101.217.193/Essteling/post.php";
+    //String urlString = "http://82.101.217.193/Essteling/post.php";
 
 
     public InsertIntoTableTask(TableTaskListener listener) {
