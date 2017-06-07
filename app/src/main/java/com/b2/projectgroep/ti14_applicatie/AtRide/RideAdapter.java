@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.b2.projectgroep.ti14_applicatie.R;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import java.util.ArrayList;
@@ -33,14 +32,8 @@ public class RideAdapter extends ArrayAdapter<Ride> {
         TextView tvName = (TextView) convertView.findViewById(R.id.rideName_tv);
         tvName.setText(ride.getName());
 
-        TextView tvCatogoryRide = (TextView) convertView.findViewById(R.id.catogoryRide_tv);
-        tvCatogoryRide.setText(ride.getCatogoryRide());
-
         ImageView imaImageRide = (ImageView) convertView.findViewById(R.id.rideImage_image);
         imaImageRide.setImageResource(ride.getRideImage());
-
-        TextView timeRide = (TextView) convertView.findViewById(R.id.ride_time);
-        timeRide.setText("");
 
         return convertView;
     }

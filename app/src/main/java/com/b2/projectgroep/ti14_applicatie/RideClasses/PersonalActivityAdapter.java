@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.b2.projectgroep.ti14_applicatie.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 /**
@@ -27,7 +25,7 @@ public class PersonalActivityAdapter extends ArrayAdapter<PersonalActivity> {
         PersonalActivity personalActivity = getItem(position);
 
         if(convertView ==null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.lv_row, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.lv_row_parent, parent, false);
         }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.rideName_tv);
