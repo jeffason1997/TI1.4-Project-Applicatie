@@ -4,16 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity">
+    tools:context="com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <ListView
         android:id="@+id/ride_lv"
-        android:layout_width="395dp"
-        android:layout_height="528dp"
-        android:listSelector="@android:color/transparent"
-        android:cacheColorHint="@android:color/transparent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:divider="@null"
         android:dividerHeight="0dp"
-        tools:layout_editor_absoluteY="2dp"
-        tools:layout_editor_absoluteX="-5dp" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
