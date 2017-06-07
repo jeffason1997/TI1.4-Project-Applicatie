@@ -19,7 +19,7 @@ import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity;
 public class LoginActivity extends AppCompatActivity {
 
    private Button btn;
-   TextView tvHead;
+   TextView tvHead,appName;
     EditText logincode;
     String loginEmployee = "1234";
     String loginGuest = "4321";
@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         Typeface type = Typeface.createFromAsset(getAssets(),"Fonts/Arial_Black.ttf");
         tvHead = (TextView) findViewById(R.id.Login_titelText);
         tvHead.setTypeface(type);
+        appName = (TextView) findViewById(R.id.AppName);
+        appName.setTypeface(type);
         logincode = (EditText) findViewById(R.id.Login_number_id);
       
         this.btn = (Button) findViewById(R.id.Esetup_confirm_button);
