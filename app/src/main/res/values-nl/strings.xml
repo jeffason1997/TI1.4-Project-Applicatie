@@ -2,18 +2,18 @@
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
     <string name="inlog_button">inloggen</string>
-    <string name="testRide_python_title">Python</string>
-    <string name="testRide_python_type">Achtbaan</string>
-    <string name="testRide_python_information">Beschrijving van de python hier</string>
-    <string name="testRide_carousel_title">Draaimolen</string>
-    <string name="testRide_carousel_type">Rustig ritje</string>
-    <string name="testRide_carousel_information">Beschrijving van de draaimolen hier</string>
-    <string name="testRide_wooden_coaster_title">Houten achtbaan</string>
-    <string name="testRide_wooden_coaster_type">Achtbaan</string>
-    <string name="testRide_wooden_coaster_information">Beschrijving van de houten achtbaan hier</string>
-    <string name="testRide_langejan_title">Lange Jan</string>
-    <string name="testRide_lange_jan_type">Onstpannend / sprookje</string>
-    <string name="testRide_lange_jan_information">Beschrijving van Lange Jan hier</string>
+    <string name="testRide_black_mamba_title">Python</string>
+    <string name="testRide_black_mamba_type">Achtbaan</string>
+    <string name="testRide_black_mamba_information">Beschrijving van de python hier</string>
+    <string name="testRide_dreamtown_title">Draaimolen</string>
+    <string name="testRide_dreamtown_type">Rustig ritje</string>
+    <string name="testRide_dreamtown_information">Beschrijving van de draaimolen hier</string>
+    <string name="testRide_fire_machine_title">Houten achtbaan</string>
+    <string name="testRide_fire_machine_type">Achtbaan</string>
+    <string name="testRide_fire_machine_information">Beschrijving van de houten achtbaan hier</string>
+    <string name="testRide_spirit_realm_title">Lange Jan</string>
+    <string name="testRide_spirit_realm_type">Onstpannend / sprookje</string>
+    <string name="testRide_spirit_realm_information">Beschrijving van Lange Jan hier</string>
     <string name="wrong_login">Verkeerde ID</string>
     <string name="inlog_text">Inlog ID/Pasnummer:</string>
     <string name="login_image_description">Algemeen plaatje</string>
@@ -32,4 +32,7 @@
     <string name="Wrtie">Schrijf</string>
     <string name="diploma_visitedText1">Je hebt</string>
     <string name="diploma_visitedText2">keer bezocht</string>
+
+    <string name="get_diplome">Verkrijg hier je diploma!</string>
+    <string name="text_diploma">Ik heb mijn Essteling diploma gehaald!!!</string>
 </resources>

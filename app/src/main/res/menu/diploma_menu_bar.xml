@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/diploma_menu_photo_id"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/diploma_menu_save_id"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/diploma_menu_print_id"
+        android:icon="@drawable/print_icon"
+        android:title="Item"
+        app:showAsAction="always" />
+</menu>

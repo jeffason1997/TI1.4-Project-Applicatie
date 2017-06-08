@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Date;
 
 
 public class AtRideListeningActivity extends AppCompatActivity implements TableTaskListener {
@@ -66,19 +67,8 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void postPersonalActivity(String cardId) {
         String key = Ride.getKeyFromRide(ride);
-        Calendar c = Calendar.getInstance();
-        int minutes = c.get(Calendar.MINUTE);
-        int hours = c.get(Calendar.HOUR_OF_DAY) + 2;
-        String minutesString = "" + minutes;
-        String hoursString = "" + hours;
-
-        if(minutes < 10) {
-            minutesString = "0" + minutes;
-        }
-        if(hours < 10) {
-            hoursString = "0" + hours;
-        }
-        String time = hoursString + ":" + minutesString;
+        Date now = new Date();
+        String time = android.text.format.DateFormat.format("HH:mm", now).toString();
         String toSend = "{\"cardId\":\"" + cardId + "\", \"time\":\"" + time + "\", \"rideName\":\"" + key + "\"}";
         InsertIntoTableTask insertTask = new InsertIntoTableTask(AtRideListeningActivity.this);
         String[] params = new String[] {toSend};
@@ -118,7 +108,7 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
             message = message.substring(3);
             try {
                 JSONObject jo = new JSONObject(message);
-                String cardId = "card" + jo.getString("cardNummer");
+                String cardId = "card" + jo.getString("cardNumber");
                 postPersonalActivity(cardId);
             } catch (JSONException e) {
                 e.printStackTrace();
