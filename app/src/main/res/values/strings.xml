@@ -3,11 +3,12 @@
     <string name="inlog_button">Log in</string>
     <string name="testRide_black_mamba_title">Black Mamba</string>
     <string name="testRide_black_mamba_type">Rollercoaster</string>
-    <string name="testRide_black_mamba_information">Description of the Cobra here</string>
+    <string name="testRide_black_mamba_information">Black mambas are fast, nervous, lethally venomous, and when threatened, highly aggressive.
+        They have been blamed for numerous human deaths, and African myths exaggerate their capabilities to legendary proportions.
+        For these reasons, the black mamba is widely considered the world’s deadliest snake.</string>
     <string name="testRide_dreamtown_title">Dreamtown</string>
     <string name="testRide_dreamtown_type">Relaxing ride</string>
-    <string name="testRide_dreamtown_information">If there is something you can never get enough from, it is a carousel.
-        A crazy attraction for the young visitors.  </string>
+    <string name="testRide_dreamtown_information">If there is something you can never get enough from, it is a carousel.</string>
     <string name="testRide_fire_machine_title">Fire Machine</string>
     <string name="testRide_fire_machine_type">Rollercoaster</string>
     <string name="testRide_fire_machine_information">Trucker Pete Shaw gives up his soul to become a hellblazing trucker,
