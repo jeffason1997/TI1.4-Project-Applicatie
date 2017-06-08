@@ -68,7 +68,7 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
         String key = Ride.getKeyFromRide(ride);
         Calendar c = Calendar.getInstance();
         int minutes = c.get(Calendar.MINUTE);
-        int hours = c.get(Calendar.HOUR_OF_DAY) + 2;
+        int hours = c.get(Calendar.HOUR_OF_DAY);
         String minutesString = "" + minutes;
         String hoursString = "" + hours;
 
@@ -118,7 +118,7 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
             message = message.substring(3);
             try {
                 JSONObject jo = new JSONObject(message);
-                String cardId = "card" + jo.getString("cardNummer");
+                String cardId = "card" + jo.getString("cardNumber");
                 postPersonalActivity(cardId);
             } catch (JSONException e) {
                 e.printStackTrace();
