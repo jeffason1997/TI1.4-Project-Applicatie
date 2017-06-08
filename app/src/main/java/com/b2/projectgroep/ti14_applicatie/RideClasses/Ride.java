@@ -2,13 +2,9 @@ package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
 
 import com.b2.projectgroep.ti14_applicatie.R;
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.util.Log;
 
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -72,10 +68,10 @@ public class Ride implements Serializable {
 
     public static HashMap<String, Ride> getTestRides() {
         HashMap<String, Ride> toReturn = new HashMap<>();
-        toReturn.put("Python", new Ride(R.string.testRide_python_title, R.string.testRide_python_type, R.string.testRide_python_information, R.drawable.python));
-        toReturn.put("Draaimolen", new Ride(R.string.testRide_carousel_title, R.string.testRide_carousel_type, R.string.testRide_carousel_information, R.drawable.draaimolen_nostalgisch));
-        toReturn.put("Houten Achtbaan", new Ride(R.string.testRide_wooden_coaster_title, R.string.testRide_wooden_coaster_type, R.string.testRide_wooden_coaster_information, R.drawable.draaimolen_nostalgisch));
-        toReturn.put("Lange Jan", new Ride(R.string.testRide_langejan_title, R.string.testRide_lange_jan_type, R.string.testRide_lange_jan_information, R.drawable.draaimolen_nostalgisch));
+        toReturn.put("Cobra", new Ride(R.string.testRide_black_mamba_title, R.string.testRide_black_mamba_type, R.string.testRide_black_mamba_information, R.drawable.python));
+        toReturn.put("Dreamtown", new Ride(R.string.testRide_dreamtown_title, R.string.testRide_dreamtown_type, R.string.testRide_dreamtown_information, R.drawable.draaimolen_nostalgisch));
+        toReturn.put("Fire Machine", new Ride(R.string.testRide_fire_machine_title, R.string.testRide_fire_machine_type, R.string.testRide_fire_machine_information, R.drawable.fire_machine));
+        toReturn.put("Spirit Realm", new Ride(R.string.testRide_spirit_realm_title, R.string.testRide_spirit_realm_type, R.string.testRide_spirit_realm_information, R.drawable.spirit_realm));
         return toReturn;
     }
 
@@ -89,14 +85,14 @@ public class Ride implements Serializable {
     }
 
     public static String getKeyFromRide(Ride ride) {
-        if(ride.getName() == R.string.testRide_python_title) {
-            return "Python";
-        } else if(ride.getName() == R.string.testRide_carousel_title) {
-            return "Draaimolen";
-        } else if(ride.getName() == R.string.testRide_wooden_coaster_title) {
-            return "Houten Achtbaan";
-        } else if(ride.getName() == R.string.testRide_langejan_title) {
-            return "Lange Jan";
+        if(ride.getName() == R.string.testRide_black_mamba_title) {
+            return "Cobra";
+        } else if(ride.getName() == R.string.testRide_dreamtown_title) {
+            return "Dreamtown";
+        } else if(ride.getName() == R.string.testRide_fire_machine_title) {
+            return "Fire Machine";
+        } else if(ride.getName() == R.string.testRide_spirit_realm_title) {
+            return "Spirit Realm";
         }
 
         return "";
