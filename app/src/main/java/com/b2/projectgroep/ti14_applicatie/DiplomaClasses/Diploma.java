@@ -30,13 +30,11 @@ public class Diploma extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
     ImageView imageView = null;
-    Bitmap image = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diploma);
-
 
         ListView diplomaLV = (ListView) findViewById(R.id.diploma_lv_id);
         imageView = (ImageView) findViewById(R.id.diploma_picture);
@@ -44,9 +42,8 @@ public class Diploma extends AppCompatActivity {
         DiplomaAdapter dpAdapter = new DiplomaAdapter(getApplicationContext(),dpVisited);
         diplomaLV.setAdapter(dpAdapter);
 
-        if (image!=null) {
-            System.out.println(image.toString());
-            imageView.setImageBitmap(image);
+        if (Image.getImage() != null) {
+            imageView.setImageBitmap(Image.getImage());
         }
     }
 
@@ -90,8 +87,8 @@ public class Diploma extends AppCompatActivity {
         if(requestCode == 1 && resultCode == RESULT_OK) {
             try {
                 Uri selectedimg = data.getData();
-                image = getCircularBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedimg));
-                imageView.setImageBitmap(image);
+                Image.setImage(getCircularBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedimg)));
+                imageView.setImageBitmap(Image.getImage());
             } catch (IOException e) {
                 e.printStackTrace();
             }
