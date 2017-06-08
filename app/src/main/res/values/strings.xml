@@ -1,19 +1,26 @@
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
     <string name="inlog_button">Log in</string>
-
-    <string name="testRide_python_title">Python</string>
-    <string name="testRide_python_type">Rollercoaster</string>
-    <string name="testRide_python_information">Description of the python here</string>
-    <string name="testRide_carousel_title">Carousel</string>
-    <string name="testRide_carousel_type">Relaxing ride</string>
-    <string name="testRide_carousel_information">Description of the carousel here</string>
-    <string name="testRide_wooden_coaster_title">Wooden rollercoaster</string>
-    <string name="testRide_wooden_coaster_type">Rollercoaster</string>
-    <string name="testRide_wooden_coaster_information">Description of the wooden rollercoaster here</string>
-    <string name="testRide_langejan_title">Long Jan</string>
-    <string name="testRide_lange_jan_type">Relaxing</string>
-    <string name="testRide_lange_jan_information">Description of lange jan here</string>
+    <string name="testRide_black_mamba_title">Black Mamba</string>
+    <string name="testRide_black_mamba_type">Rollercoaster</string>
+    <string name="testRide_black_mamba_information">Description of the Cobra here</string>
+    <string name="testRide_dreamtown_title">Dreamtown</string>
+    <string name="testRide_dreamtown_type">Relaxing ride</string>
+    <string name="testRide_dreamtown_information">If there is something you can never get enough from, it is a carousel.
+        A crazy attraction for the young visitors.  </string>
+    <string name="testRide_fire_machine_title">Fire Machine</string>
+    <string name="testRide_fire_machine_type">Rollercoaster</string>
+    <string name="testRide_fire_machine_information">Trucker Pete Shaw gives up his soul to become a hellblazing trucker,
+        to fight against power hungry Jarrett,
+        the son of the devil himself.
+        They call him the Fire Machine. </string>
+    <string name="testRide_spirit_realm_title">Spirit Realm</string>
+    <string name="testRide_spirit_realm_type">Relaxing</string>
+    <string name="testRide_spirit_realm_information">Thirty thousand years ago, the Heaven Fighting Race who called themselves “Gods” invaded Spirit Realm.
+        Hundreds of races rose up in resistance, but ultimately suffered a crushing defeat.
+        The Human Race was the first to concede, and the rest of the Hundred Races soon followed in succession.
+        During the subsequent ten thousand years, all of the races were enslaved by the Heaven Fighting Race.
+        They were cruelly treated, and lived beneath the shadow of terror.</string>
     <string name="wrong_login">Wrong ID</string>
     <string name="inlog_text">Login ID/Pass number:</string>
     <string name="login_image_description">Generic picture</string>
