@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
 import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.Diploma;
@@ -51,9 +52,9 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
             }
         });
 
-//        GetTableTask getTableTask = new GetTableTask(this);
-//        String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
-//        getTableTask.execute(params);
+        GetTableTask getTableTask = new GetTableTask(this);
+        String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
+        getTableTask.execute(params);
     }
 
     @Override
