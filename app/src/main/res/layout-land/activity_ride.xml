@@ -10,6 +10,10 @@
         android:id="@+id/ride_lv"
         android:layout_width="592dp"
         android:layout_height="529dp"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
         tools:layout_editor_absoluteY="-1dp"
         tools:layout_editor_absoluteX="-1dp" />
 </android.support.constraint.ConstraintLayout>

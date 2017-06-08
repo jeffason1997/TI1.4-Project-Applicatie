@@ -27,4 +27,7 @@
     <string name="Echoose_confirm_button">Confirm</string>
     <string name="error_no_data_returned">No activities yet to show.\nCheck if you put in the right card number.</string>
     <string name="error_loading_data">Error whilst loading data</string>
+    <string name="lv_kind_tijd">Your child was here at</string>
+    <string name="Read">Read</string>
+    <string name="Wrtie">Write</string>
 </resources>
