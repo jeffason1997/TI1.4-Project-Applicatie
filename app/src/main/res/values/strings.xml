@@ -30,4 +30,6 @@
     <string name="lv_kind_tijd">Your child was here at</string>
     <string name="Read">Read</string>
     <string name="Wrtie">Write</string>
+    <string name="diploma_visitedText1">You visited</string>
+    <string name="diploma_visitedText2">times</string>
 </resources>
