@@ -32,4 +32,7 @@
     <string name="Wrtie">Write</string>
     <string name="diploma_visitedText1">You visited</string>
     <string name="diploma_visitedText2">times</string>
+
+    <string name="get_diplome">Get your diploma!</string>
+    <string name="text_diploma">I achieved my Essteling diploma!!!</string>
 </resources>

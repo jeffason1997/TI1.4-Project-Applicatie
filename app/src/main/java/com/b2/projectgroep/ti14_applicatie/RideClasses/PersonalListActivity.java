@@ -1,21 +1,20 @@
 package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
+import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.Diploma;
 import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.util.ArrayList;
@@ -52,9 +51,30 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
             }
         });
 
-        GetTableTask getTableTask = new GetTableTask(this);
-        String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
-        getTableTask.execute(params);
+//        GetTableTask getTableTask = new GetTableTask(this);
+//        String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
+//        getTableTask.execute(params);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.parent_menu_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.parent_menu_print : {
+                Intent i = new Intent(getApplicationContext(), Diploma.class);
+                startActivity(i);
+                return true;
+            }
+            default: {
+                return super.onOptionsItemSelected(item);
+            }
+        }
     }
 
     @Override

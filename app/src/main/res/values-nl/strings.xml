@@ -32,4 +32,7 @@
     <string name="Wrtie">Schrijf</string>
     <string name="diploma_visitedText1">Je hebt</string>
     <string name="diploma_visitedText2">keer bezocht</string>
+
+    <string name="get_diplome">Verkrijg hier je diploma!</string>
+    <string name="text_diploma">Ik heb mijn Essteling diploma gehaald!!!</string>
 </resources>
