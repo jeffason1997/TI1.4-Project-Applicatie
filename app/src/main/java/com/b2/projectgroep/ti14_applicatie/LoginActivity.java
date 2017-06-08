@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.graphics.Typeface;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,7 @@ import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-   private Button btn;
+   private ImageButton btn;
    TextView tvHead,appName;
     EditText logincode;
     String loginEmployee = "1234";
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         appName.setTypeface(type);
         logincode = (EditText) findViewById(R.id.Login_number_id);
       
-        this.btn = (Button) findViewById(R.id.Esetup_confirm_button);
+        this.btn = (ImageButton) findViewById(R.id.Esetup_confirm_button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
