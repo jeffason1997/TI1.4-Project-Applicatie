@@ -31,7 +31,7 @@ public class Employee_readActivity extends AppCompatActivity {
 
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public static final String TAG = "NfcDemo";
-    private TextView parentName,parentSur,phoneNumber,childName,childSur;
+    private TextView parentName,parentSur,phoneNumber,childName,childSur,cardNumber;
     private NfcAdapter mNfcAdapter;
     private ProgressDialog dialog;
     Tag currentTag;
@@ -57,6 +57,7 @@ public class Employee_readActivity extends AppCompatActivity {
         });
         childName = (TextView) findViewById(R.id.Eread_nameChild_id);
         childSur = (TextView) findViewById(R.id.Eread_surnameChild_id);
+        cardNumber = (TextView) findViewById(R.id.Eread_cardNumber_id);
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter == null) {
@@ -87,7 +88,6 @@ public class Employee_readActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        dialog.dismiss();
         currentTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
         handleIntent(intent);
     }
@@ -198,6 +198,7 @@ public class Employee_readActivity extends AppCompatActivity {
                 String phoneNum="";
                 String nameChild="";
                 String surChild="";
+                String cardNum="";
                  if(json!=null){
                      try {
                          nameParent = json.getString("nameP");
@@ -205,6 +206,7 @@ public class Employee_readActivity extends AppCompatActivity {
                          phoneNum = json.getString("phoneNumber");
                          nameChild = json.getString("nameC");
                          surChild = json.getString("surnameC");
+                         cardNum = json.getString("cardNumber");
                      } catch (Exception e){
                          System.err.println(e);
                      }
@@ -217,6 +219,8 @@ public class Employee_readActivity extends AppCompatActivity {
                 phoneNumber.setText(content);
                 childName.setText(nameChild);
                 childSur.setText(surChild);
+                cardNumber.setText(cardNum);
+                dialog.dismiss();
             }
         }
     }

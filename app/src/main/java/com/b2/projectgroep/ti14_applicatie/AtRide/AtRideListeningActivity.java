@@ -67,10 +67,8 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void postPersonalActivity(String cardId) {
         String key = Ride.getKeyFromRide(ride);
-
         Date now = new Date();
         String time = android.text.format.DateFormat.format("HH:mm", now).toString();
-
         String toSend = "{\"cardId\":\"" + cardId + "\", \"time\":\"" + time + "\", \"rideName\":\"" + key + "\"}";
         InsertIntoTableTask insertTask = new InsertIntoTableTask(AtRideListeningActivity.this);
         String[] params = new String[] {toSend};
@@ -110,7 +108,7 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
             message = message.substring(3);
             try {
                 JSONObject jo = new JSONObject(message);
-                String cardId = "card" + jo.getString("cardNummer");
+                String cardId = "card" + jo.getString("cardNumber");
                 postPersonalActivity(cardId);
             } catch (JSONException e) {
                 e.printStackTrace();
