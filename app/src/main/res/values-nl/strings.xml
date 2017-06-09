@@ -35,4 +35,5 @@
 
     <string name="get_diplome">Verkrijg hier je diploma!</string>
     <string name="text_diploma">Ik heb mijn Essteling diploma gehaald!!!</string>
+    <string name="employee_choose_request">Aangevraagde kaarten</string>
 </resources>
