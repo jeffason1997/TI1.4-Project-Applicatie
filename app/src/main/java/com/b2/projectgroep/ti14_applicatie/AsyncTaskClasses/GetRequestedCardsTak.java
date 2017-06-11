@@ -69,7 +69,7 @@ public class GetRequestedCardsTak extends AsyncTask<String, Void, String> {
                     JSONObject jo = ja.getJSONObject(x);
                     Name parent = new Name(jo.getString("parent_firstname"), jo.getString("parent_lastname"));
                     String phoneNumber = jo.getString("phone_number");
-                    Name child1 = new Name(jo.getString("child_firstname_1"), jo.getString("child_lastname_1"));
+                    Name child1 = new Name(jo.getString("childfirstname"), jo.getString("childlastname"));
                     Request r = new Request(parent, phoneNumber, child1);
                     listener.onRequestAvailable(r);
                     Log.i("Message", "Request sent");

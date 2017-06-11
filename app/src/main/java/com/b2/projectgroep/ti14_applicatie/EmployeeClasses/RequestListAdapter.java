@@ -37,6 +37,9 @@ public class RequestListAdapter extends ArrayAdapter {
         TextView phone = (TextView) convertView.findViewById(R.id.request_list_phonenumber);
         phone.setText(((Request)getItem(position)).getPhoneNumber());
 
+        TextView childname = (TextView) convertView.findViewById(R.id.request_list_childname);
+        childname.setText(((Request) getItem(position)).getChild().toString());
+
         return convertView;
     }
 }

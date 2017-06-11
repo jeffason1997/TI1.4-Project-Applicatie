@@ -43,4 +43,5 @@
     <string name="get_diplome">Get your diploma!</string>
     <string name="text_diploma">I achieved my Essteling diploma!!!</string>
     <string name="employee_choose_request">Requested cards</string>
+    <string name="emplyee_request_childname">Name child</string>
 </resources>
