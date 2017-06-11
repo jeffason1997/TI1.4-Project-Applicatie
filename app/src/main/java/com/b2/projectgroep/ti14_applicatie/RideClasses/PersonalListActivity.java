@@ -1,5 +1,6 @@
 package com.b2.projectgroep.ti14_applicatie.RideClasses;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
 import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.Diploma;
+import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_readActivity;
 import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     ListView ride_listView;
     ArrayAdapter mAdapter;
     private ListView listViewer;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,10 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         GetTableTask getTableTask = new GetTableTask(this);
         String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
         getTableTask.execute(params);
+
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Waiting for server response");
+        dialog.show();
     }
 
     @Override
@@ -81,6 +88,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     @Override
     public void onRideAvailable(PersonalActivity activity) {
         if(!personalActivities.contains(activity) && activity != null) {
+            dialog.dismiss();
             personalActivities.add(activity);
             Collections.sort(personalActivities);
             mAdapter.notifyDataSetChanged();
@@ -89,6 +97,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
 
     @Override
     public void onErrorMessage(final String s) {
+        dialog.dismiss();
         if(s.equals("No results")) {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_no_data_returned), Toast.LENGTH_LONG).show();
         } else {
