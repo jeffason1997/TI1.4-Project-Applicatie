@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.AtRide.AtRideActivity;
+import com.b2.projectgroep.ti14_applicatie.CardClasses.SelectCardActivity;
 import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_chooseActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity;
 
@@ -49,10 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), AtRideActivity.class);
                     startActivity(i);
                 } else if (!logincode.getText().toString().equals("")) {
-//                    Intent i = new Intent(getApplicationContext(), SelectCardActivity.class);
-//                    i.putExtra("phoneNumber", "number" + logincode.getText().toString());
-                    Intent i = new Intent(getApplicationContext(), PersonalListActivity.class);
-                    i.putExtra("cardID", "card" + logincode.getText().toString());
+                    Intent i = new Intent(getApplicationContext(), SelectCardActivity.class);
+                    i.putExtra("phoneNumber", logincode.getText().toString());
                     startActivity(i);
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.wrong_login, Toast.LENGTH_SHORT).show();

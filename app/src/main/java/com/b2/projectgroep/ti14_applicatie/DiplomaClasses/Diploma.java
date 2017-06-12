@@ -1,8 +1,10 @@
 package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -10,7 +12,9 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Environment;
+import android.print.PrintManager;
 import android.provider.MediaStore;
+import android.support.v4.print.PrintHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,12 +39,14 @@ public class Diploma extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
     ImageView imageView = null;
+    String name,surname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diploma);
 
+        System.out.println(getIntent().getExtras().getString("name"));
         ListView diplomaLV = (ListView) findViewById(R.id.diploma_lv_id);
         imageView = (ImageView) findViewById(R.id.diploma_picture);
         ArrayList<Ride> dpVisited = new ArrayList<>(Ride.getTestRides().values());
@@ -71,6 +77,7 @@ public class Diploma extends AppCompatActivity {
                 return true;
             }
             case R.id.diploma_menu_print_id: {
+                doPrint();
                 Toast.makeText(getApplicationContext(), "Print", Toast.LENGTH_LONG).show();
                 return true;
             }
@@ -171,5 +178,14 @@ public class Diploma extends AppCompatActivity {
         Uri uri = Uri.fromFile(imageFile);
         intent.setDataAndType(uri, "image/*");
         startActivity(intent);
+    }
+
+    private void doPrint() {
+        PrintManager printManager = (PrintManager) this.getSystemService(Context.PRINT_SERVICE);
+
+        String jobName = this.getString(R.string.app_name) + " Document";
+
+        printManager.print(jobName, new MyPrintDocumentAdapter(this), null);
+
     }
 }

@@ -2,6 +2,12 @@ package com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses;
 
 import android.os.AsyncTask;
 
+import com.b2.projectgroep.ti14_applicatie.CardClasses.Card;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -12,23 +18,24 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by dionb on 1-6-2017.
+ * Created by Jeffrey on 12-6-2017.
  */
 
-public class AddCardToListTask extends AsyncTask<String, Void, String> {
-    TableTaskListener listener;
+public class GetCardsWithPhoneTask extends AsyncTask<String,Void,String> {
+    GetCardsTask listener;
 
-    String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/addCardToList.php";
+    String urlString = "http://dion-bartelen.000webhostapp.com/Essteling/getCardsWithPhoneNumber.php";
 
+    //temp url
+    //String urlString = "http://82.101.217.193/Essteling/get.php";
 
-    public AddCardToListTask(TableTaskListener listener) {
+    public GetCardsWithPhoneTask(GetCardsTask listener) {
         this.listener = listener;
     }
 
     @Override
     protected String doInBackground(String... params) {
-        String answer = "";
-        System.out.println("params " + params[0]);
+        String answer = "Start";
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -36,6 +43,8 @@ public class AddCardToListTask extends AsyncTask<String, Void, String> {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.connect();
+
+            System.out.println(params[0]);
 
             DataOutputStream output = new DataOutputStream(connection.getOutputStream());
             output.writeBytes(params[0]);
@@ -58,9 +67,19 @@ public class AddCardToListTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        if(s.equals("Succes")) {
-            listener.onSuccesMessage(s);
-        } else {
+        System.out.println(s);
+        try {
+            JSONArray ja = new JSONArray(s);
+            for(int x = 0; x < ja.length(); x++) {
+                JSONObject card = ja.getJSONObject(x);
+                String name = card.getString("firstname");
+                String surname = card.getString("lastname");
+                String id = card.getString("cardId");
+                Card c = new Card(name,surname,id);
+                listener.onCardAvailable(c);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
             listener.onErrorMessage(s);
         }
     }

@@ -29,6 +29,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     ListView ride_listView;
     ArrayAdapter mAdapter;
     private ListView listViewer;
+    String name,surname;
     ProgressDialog dialog;
 
     @Override
@@ -36,11 +37,13 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride);
 
-        String cardNumber = getIntent().getExtras().getString("cardId");
+        String cardNumber = getIntent().getExtras().getString("cardID");
+        name = getIntent().getExtras().getString("name");
+        surname = getIntent().getExtras().getString("surname");
 
         personalActivities = new ArrayList<>();
 
-        ride_listView =  (ListView) findViewById(R.id.ride_lv);
+        ride_listView = (ListView) findViewById(R.id.ride_lv);
 
         mAdapter = new PersonalActivityAdapter((this.getApplicationContext()), personalActivities);
         ride_listView.setAdapter(mAdapter);
@@ -56,7 +59,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         });
 
         GetTableTask getTableTask = new GetTableTask(this);
-        String[] params = new String[] {"{\"cardId\":\"" + cardNumber + "\"}"};
+        String[] params = new String[]{"{\"cardId\":\"" + cardNumber + "\"}"};
         getTableTask.execute(params);
         dialog = new ProgressDialog(this);
         dialog.setMessage("Waiting for server response");
@@ -73,8 +76,10 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.parent_menu_print : {
+            case R.id.parent_menu_print: {
                 Intent i = new Intent(getApplicationContext(), Diploma.class);
+                i.putExtra("name", name);
+                i.putExtra("surname", surname);
                 startActivity(i);
                 return true;
             }
@@ -86,7 +91,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
 
     @Override
     public void onRideAvailable(PersonalActivity activity) {
-        if(!personalActivities.contains(activity) && activity != null) {
+        if (!personalActivities.contains(activity) && activity != null) {
             dialog.dismiss();
             personalActivities.add(activity);
             Collections.sort(personalActivities);
@@ -97,7 +102,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     @Override
     public void onErrorMessage(final String s) {
         dialog.dismiss();
-        if(s.equals("No results")) {
+        if (s.equals("No results")) {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_no_data_returned), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_loading_data), Toast.LENGTH_LONG).show();
