@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.graphics.Typeface;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -51,8 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), AtRideActivity.class);
                     startActivity(i);
                 } else if (!logincode.getText().toString().equals("")) {
+//                    Intent i = new Intent(getApplicationContext(), SelectCardActivity.class);
+//                    i.putExtra("phoneNumber", "number" + logincode.getText().toString());
                     Intent i = new Intent(getApplicationContext(), PersonalListActivity.class);
-                    i.putExtra("cardId", "card" + logincode.getText().toString());
+                    i.putExtra("cardID", "card" + logincode.getText().toString());
                     startActivity(i);
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.wrong_login, Toast.LENGTH_SHORT).show();

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/card_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Eread_name_child"
+        app:layout_constraintLeft_toRightOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/logo_essteling"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/card_cardNumber_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/Echoose_cardnumber"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintLeft_toRightOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/card_child_name_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintLeft_toRightOf="@+id/card_text_name"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_text_name"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:id="@+id/card_child_surname_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="32dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/card_child_name_id"
+        app:layout_constraintLeft_toRightOf="@+id/card_child_name_id" />
+
+    <TextView
+        android:id="@+id/card_text_cardNumber_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/card_cardNumber_id"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/card_child_name_id" />
+</android.support.constraint.ConstraintLayout>
