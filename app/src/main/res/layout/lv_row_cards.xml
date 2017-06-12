@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:id="@+id/card_cardNumber_id"
+        android:id="@+id/card_text_cardNumber_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -57,12 +57,12 @@
         app:layout_constraintLeft_toRightOf="@+id/card_child_name_id" />
 
     <TextView
-        android:id="@+id/card_text_cardNumber_id"
+        android:id="@+id/card_cardNumber_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/card_cardNumber_id"
+        android:layout_marginBottom="-1dp"
         android:layout_marginLeft="0dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/card_text_cardNumber_id"
         app:layout_constraintLeft_toLeftOf="@+id/card_child_name_id" />
 </android.support.constraint.ConstraintLayout>

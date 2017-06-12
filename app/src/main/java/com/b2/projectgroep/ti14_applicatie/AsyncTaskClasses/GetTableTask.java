@@ -36,6 +36,7 @@ public class GetTableTask extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String answer = "Start";
+        System.out.println(params[0]);
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
