@@ -50,4 +50,6 @@
     <string name="tag_nfc_card">Tag NFC card.</string>
     <string name="empty_field">Empty field</string>
     <string name="empty_fields">One or multiple fields are empty.</string>
+    <string name="wrong_emplyee_code">Wrong login code</string>
+
 </resources>

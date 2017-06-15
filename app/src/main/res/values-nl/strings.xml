@@ -49,4 +49,6 @@
     <string name="tag_nfc_card">Tag NFC kaart.</string>
     <string name="empty_field">Leeg veld</string>
     <string name="empty_fields">Een of meerdere velden zijn leeg.</string>
+    <string name="wrong_emplyee_code">Verkeerde login code</string>
+  
 </resources>
