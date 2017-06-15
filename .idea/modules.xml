@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/TI1.4-Project-Applicatie.iml" filepath="$PROJECT_DIR$/TI1.4-Project-Applicatie.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TI1.4-Project-Applicatie.iml" filepath="$PROJECT_DIR$/TI1.4-Project-Applicatie.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/proftaak 1.4.iml" filepath="$PROJECT_DIR$/proftaak 1.4.iml" />
     </modules>

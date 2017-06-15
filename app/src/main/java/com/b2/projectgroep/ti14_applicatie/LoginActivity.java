@@ -19,15 +19,15 @@ import com.b2.projectgroep.ti14_applicatie.CardClasses.SelectCardActivity;
 import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_chooseActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity;
 
-public class LoginActivity extends AppCompatActivity implements TableTaskListener {
+public class LoginActivity extends AppCompatActivity {
 
     private ImageButton btn;
     TextView tvHead,appName;
     EditText logincode;
     ProgressDialog dialog;
-//    String loginEmployee = "1234";
+    String loginEmployee = "1234";
 //    String loginGuest = "4321";
-//    String loginAtLocation = "0000";
+    String loginAtLocation = "0000";
 
 
     @Override
@@ -49,43 +49,21 @@ public class LoginActivity extends AppCompatActivity implements TableTaskListene
             @Override
             public void onClick(View v) {
                 String inputFromUser = logincode.getText().toString();
-                if(inputFromUser.length() > 6) {
+                if(inputFromUser.equals("")) {
+                    Toast.makeText(getApplicationContext(), R.string.request_phonenumber, Toast.LENGTH_LONG).show();
+                } else if(!inputFromUser.equals(loginEmployee) && !inputFromUser.equals(loginAtLocation)) {
                     Intent i = new Intent(getApplicationContext(), SelectCardActivity.class);
                     i.putExtra("phoneNumber", logincode.getText().toString());
                     startActivity(i);
+                } else if(!inputFromUser.equals(loginEmployee)) {
+                    Intent i = new Intent(getApplicationContext(), AtRideActivity.class);
+                    startActivity(i);
                 } else {
-                    LogInTask task = new LogInTask(LoginActivity.this);
-                    String[] params = new String[]{"{\"input\":\"" + inputFromUser + "\"}"};
-                    task.execute(params);
-
-                    dialog = new ProgressDialog(LoginActivity.this);
-                    dialog.setMessage("Waiting for server response...");
-                    dialog.show();
+                    Intent i = new Intent(getApplicationContext(), LoginEmployeeActivity.class);
+                    startActivity(i);
                 }
             }
         });
-    }
-
-    @Override
-    public void onSuccesMessage(String s) {
-        if(dialog != null) {
-            dialog.dismiss();
-        }
-        if(s.equals("ride")) {
-            Intent i = new Intent(getApplicationContext(), AtRideActivity.class);
-            startActivity(i);
-        } else if(s.equals("employee")) {
-            Intent i = new Intent(getApplicationContext(), Employee_chooseActivity.class);
-            startActivity(i);
-        }
-    }
-
-    @Override
-    public void onErrorMessage(String s) {
-        if(dialog != null) {
-            dialog.dismiss();
-        }
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.wrong_emplyee_code ), Toast.LENGTH_SHORT).show();
     }
 
     @Override

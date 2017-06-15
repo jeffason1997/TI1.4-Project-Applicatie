@@ -16,8 +16,7 @@ import android.widget.Toast;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
-import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.Diploma;
-import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_readActivity;
+import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.DiplomaActivity;
 import com.b2.projectgroep.ti14_applicatie.R;
 
 import java.util.ArrayList;
@@ -62,7 +61,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         String[] params = new String[]{"{\"cardId\":\"" + cardNumber + "\"}"};
         getTableTask.execute(params);
         dialog = new ProgressDialog(this);
-        dialog.setMessage("Waiting for server response");
+        dialog.setMessage(getResources().getString(R.string.waiting_server_response));
         dialog.show();
     }
 
@@ -77,9 +76,10 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.parent_menu_print: {
-                Intent i = new Intent(getApplicationContext(), Diploma.class);
+                Intent i = new Intent(getApplicationContext(), DiplomaActivity.class);
                 i.putExtra("name", name);
                 i.putExtra("surname", surname);
+                i.putExtra("personalActivities",personalActivities);
                 startActivity(i);
                 return true;
             }

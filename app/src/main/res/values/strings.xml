@@ -32,17 +32,30 @@
     <string name="Esetup_name_parent">Name</string>
     <string name="Esetup_surname_parent">Surname</string>
     <string name="Echoose_confirm_button">Confirm</string>
-    <string name="error_no_data_returned">No activities yet to show.\nCheck if you put in the right card number.</string>
+    <string name="error_no_data_returned">No activities yet to show.\nCheck if you put in the right phonenumber.</string>
     <string name="error_loading_data">Error whilst loading data</string>
     <string name="lv_kind_tijd">Your child was here at</string>
     <string name="Read">Read</string>
-    <string name="Wrtie">Write</string>
+    <string name="Wrtie">Requested</string>
     <string name="diploma_visitedText1">You visited</string>
     <string name="diploma_visitedText2">times</string>
 
     <string name="get_diplome">Get your diploma!</string>
     <string name="text_diploma">I achieved my Essteling diploma!!!</string>
     <string name="employee_choose_request">Requested cards</string>
-    <string name="emplyee_request_childname">Name child</string>
+    <string name="no_nfc_supported">This device doesn\'t support NFC</string>
+    <string name="nfc_off">NFC is turned off</string>
+    <string name="waiting_server_response">Waiting for server response</string>
+    <string name="tag_nfc_card">Tag NFC card</string>
+    <string name="empty_field">Empty field</string>
+    <string name="empty_fields">One or multiple fields are empty</string>
     <string name="wrong_emplyee_code">Wrong login code</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="wrong_credentials">Wrong credentials</string>
+    <string name="employee_request_childname">Name child</string>
+    <string name="request_phonenumber">Put in a phonenumber</string>
+    <string name="saved">Saved</string>
+    <string name="error_saved">Error while saving</string>
+    <string name="done">Done</string>
 </resources>
