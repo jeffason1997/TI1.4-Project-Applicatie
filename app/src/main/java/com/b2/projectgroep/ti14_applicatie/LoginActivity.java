@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String inputFromUser = logincode.getText().toString();
                 if(inputFromUser.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Put in a phonenumber", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.request_phonenumber, Toast.LENGTH_LONG).show();
                 } else if(!inputFromUser.equals(loginEmployee) && !inputFromUser.equals(loginAtLocation)) {
                     Intent i = new Intent(getApplicationContext(), SelectCardActivity.class);
                     i.putExtra("phoneNumber", logincode.getText().toString());
