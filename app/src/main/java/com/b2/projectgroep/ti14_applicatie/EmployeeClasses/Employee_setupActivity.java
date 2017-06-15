@@ -133,7 +133,7 @@ public class Employee_setupActivity extends AppCompatActivity implements TableTa
         if (message != null) {
             writeTag(currentTag, message);
             dialog.dismiss();
-            Toast.makeText(this, "Done", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.done, Toast.LENGTH_LONG).show();
             finish();
         }
     }

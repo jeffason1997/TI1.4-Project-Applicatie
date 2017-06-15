@@ -27,30 +27,40 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.R;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
-public class Diploma extends AppCompatActivity {
+public class DiplomaActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
     ImageView imageView = null;
     String name,surname;
+    Uri selectedimg;
+    ArrayList<PersonalActivity> personalActivities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diploma);
 
-        System.out.println(getIntent().getExtras().getString("name"));
+        if (Image.getImage() == null) {
+            Image.setImage(getCircularBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.logo_essteling)));
+        }
+
+        name = getIntent().getExtras().getString("name");
+        surname = getIntent().getExtras().getString("surname");
+        personalActivities = (ArrayList<PersonalActivity>)getIntent().getSerializableExtra("personalActivities");
         ListView diplomaLV = (ListView) findViewById(R.id.diploma_lv_id);
         imageView = (ImageView) findViewById(R.id.diploma_picture);
         ArrayList<Ride> dpVisited = new ArrayList<>(Ride.getTestRides().values());
-        DiplomaAdapter dpAdapter = new DiplomaAdapter(getApplicationContext(),dpVisited);
+        DiplomaAdapter dpAdapter = new DiplomaAdapter(getApplicationContext(),dpVisited,personalActivities);
         diplomaLV.setAdapter(dpAdapter);
 
         if (Image.getImage() != null) {
@@ -98,7 +108,7 @@ public class Diploma extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 1 && resultCode == RESULT_OK) {
             try {
-                Uri selectedimg = data.getData();
+                selectedimg = data.getData();
                 Image.setImage(getCircularBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedimg)));
                 imageView.setImageBitmap(Image.getImage());
             } catch (IOException e) {
@@ -164,11 +174,11 @@ public class Diploma extends AppCompatActivity {
 
             openScreenshot(imageFile);
 
-            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_LONG).show();
         } catch (Throwable e) {
             // Several error may come out with file handling or OOM
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Error while saving", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.error_saved, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -182,10 +192,9 @@ public class Diploma extends AppCompatActivity {
 
     private void doPrint() {
         PrintManager printManager = (PrintManager) this.getSystemService(Context.PRINT_SERVICE);
-
         String jobName = this.getString(R.string.app_name) + " Document";
 
-        printManager.print(jobName, new MyPrintDocumentAdapter(this), null);
+        printManager.print(jobName, new MyPrintDocumentAdapter(this,name,surname), null);
 
     }
 }

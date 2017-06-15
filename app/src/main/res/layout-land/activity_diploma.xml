@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.b2.projectgroep.ti14_applicatie.DiplomaClasses.DiplomaActivity"
+    tools:context="com.b2.projectgroep.ti14_applicatie.DiplomaClasses.Diploma"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -26,8 +26,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diploma_picture"
-        app:layout_constraintVertical_bias="0.496"
-        android:divider="@null"/>
+        app:layout_constraintVertical_bias="0.496" />
 
     <TextView
         android:id="@+id/textView5"

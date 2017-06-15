@@ -31,24 +31,30 @@
     <string name="Esetup_name_parent">Naam</string>
     <string name="Esetup_surname_parent">Achternaam</string>
     <string name="Echoose_confirm_button">Bevestig</string>
-    <string name="error_no_data_returned">Er zijn nog geen activiteiten bekend.\nControleer of je het goede kaart nummer ingetypt hebt.</string>
+    <string name="error_no_data_returned">Er zijn nog geen activiteiten bekend.\nControleer of je het goede telefoonnummer ingetypt hebt.</string>
     <string name="error_loading_data">Error tijdens het laden</string>
     <string name="lv_kind_tijd">Uw kind was hier om</string>
     <string name="Read">Lees</string>
-    <string name="Wrtie">Schrijf</string>
+    <string name="Wrtie">Aangevraagd</string>
     <string name="diploma_visitedText1">Je hebt</string>
     <string name="diploma_visitedText2">keer bezocht</string>
 
     <string name="get_diplome">Verkrijg hier je diploma!</string>
     <string name="text_diploma">Ik heb mijn Essteling diploma gehaald!!!</string>
     <string name="employee_choose_request">Aangevraagde kaarten</string>
-    <string name="emplyee_request_childname">Naam kind</string>
-    <string name="no_nfc_supported">Dit apparaat ondersteund geen NFC.</string>
+    <string name="no_nfc_supported">Dit apparaat ondersteund geen NFC</string>
     <string name="nfc_off">NFC staat uit</string>
-    <string name="waiting_server_response">Wachten op server.</string>
-    <string name="tag_nfc_card">Tag NFC kaart.</string>
+    <string name="waiting_server_response">Wachten op server</string>
+    <string name="tag_nfc_card">Tag NFC kaart</string>
     <string name="empty_field">Leeg veld</string>
-    <string name="empty_fields">Een of meerdere velden zijn leeg.</string>
+    <string name="empty_fields">Een of meerdere velden zijn leeg</string>
     <string name="wrong_emplyee_code">Verkeerde login code</string>
-  
+    <string name="username">Gebruikersnaam</string>
+    <string name="password">Wachtwoord</string>
+    <string name="wrong_credentials">Verkeerde inloggegevens</string>
+    <string name="employee_request_childname">Naam kind</string>
+    <string name="request_phonenumber">Voer een telefoonnummer in</string>
+    <string name="saved">Opgeslagen</string>
+    <string name="error_saved">Error tijdens het opslaan</string>
+    <string name="done">Klaar</string>
 </resources>
