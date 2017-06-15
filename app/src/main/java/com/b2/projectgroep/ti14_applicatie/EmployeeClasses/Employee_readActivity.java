@@ -42,7 +42,7 @@ public class Employee_readActivity extends AppCompatActivity {
         setContentView(R.layout.activity_employee_read);
 
         dialog = new ProgressDialog(Employee_readActivity.this);
-        dialog.setMessage("Tag NFC Card please");
+        dialog.setMessage(getResources().getString(R.string.tag_nfc_card));
         dialog.show();
 
         parentName = (TextView) findViewById(R.id.Eread_nameParent_id);
@@ -61,7 +61,7 @@ public class Employee_readActivity extends AppCompatActivity {
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter == null) {
-            Toast.makeText(this, "this device doesn't support NFC.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
             finish();
             return;
         }

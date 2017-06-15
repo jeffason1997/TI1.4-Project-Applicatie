@@ -48,13 +48,13 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
         if (nfcAdapter == null) {
-            Toast.makeText(this, "This device doesn't support NFC.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
 
         if (!nfcAdapter.isEnabled()) {
-            Toast.makeText(this, "NFC is turned off.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.nfc_off, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
