@@ -30,9 +30,12 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
     private int pageWidth;
     public PdfDocument myPdfDocument;
     public int totalpages = 1;
+    String name,surname;
 
-    public MyPrintDocumentAdapter(Context context) {
+    public MyPrintDocumentAdapter(Context context, String name, String surname) {
         this.context = context;
+        this.name = name;
+        this.surname = surname;
     }
 
     @Override
@@ -48,10 +51,10 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
     @Override
     public void onLayout(PrintAttributes oldAttributes, PrintAttributes newAttributes, CancellationSignal cancellationSignal, LayoutResultCallback callback, Bundle extras) {
         myPdfDocument = new PrintedPdfDocument(context, newAttributes);
-        pageHeight = newAttributes.getMediaSize().getHeightMils()/1000 * 72;
-        pageWidth = newAttributes.getMediaSize().getWidthMils()/1000 * 72;
+        pageHeight = newAttributes.getMediaSize().getHeightMils() / 1000 * 72;
+        pageWidth = newAttributes.getMediaSize().getWidthMils() / 1000 * 72;
 
-        if (cancellationSignal.isCanceled() ) {
+        if (cancellationSignal.isCanceled()) {
             callback.onLayoutCancelled();
             return;
         }
@@ -74,8 +77,7 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
     @Override
     public void onWrite(PageRange[] pageRanges, ParcelFileDescriptor destination, CancellationSignal cancellationSignal, WriteResultCallback callback) {
         for (int i = 0; i < totalpages; i++) {
-            if (pageInRange(pageRanges, i))
-            {
+            if (pageInRange(pageRanges, i)) {
                 PdfDocument.PageInfo newPage = new PdfDocument.PageInfo.Builder(pageWidth,
                         pageHeight, i).create();
 
@@ -107,10 +109,8 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         callback.onWriteFinished(pageRanges);
     }
 
-    private boolean pageInRange(PageRange[] pageRanges, int page)
-    {
-        for (int i = 0; i<pageRanges.length; i++)
-        {
+    private boolean pageInRange(PageRange[] pageRanges, int page) {
+        for (int i = 0; i < pageRanges.length; i++) {
             if ((page >= pageRanges[i].getStart()) &&
                     (page <= pageRanges[i].getEnd()))
                 return true;
@@ -125,19 +125,19 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         pagenumber++; // Make sure page numbers start at 1
 
         int titleBaseLine = 72;
-        int leftMargin = 54;
 
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        paint.setTextSize(40);
+        paint.setTextSize(25);
+        paint.setTextAlign(Paint.Align.CENTER);
         canvas.drawText(
-                "Test Print Document Page " + pagenumber,
-                leftMargin,
+                "Gefeliciteerd bruh " + name +" "+ surname,
+                canvas.getWidth()/2-50,
                 titleBaseLine,
                 paint);
 
         paint.setTextSize(14);
-        canvas.drawText("This is some test content to verify that custom document printing works", leftMargin, titleBaseLine + 35, paint);
+        canvas.drawText("je hebt je Essteling diploma gehaald, nigguh", canvas.getWidth()/2-50, titleBaseLine + 25, paint);
 
         if (pagenumber % 2 == 0)
             paint.setColor(Color.RED);
@@ -146,12 +146,8 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
 
         PdfDocument.PageInfo pageInfo = page.getInfo();
 
-        Bitmap image = Bitmap.createScaledBitmap(Image.getImage(),pageInfo.getPageWidth()/2,pageInfo.getPageWidth()/2,true);
-        canvas.drawBitmap(image,(float)((pageInfo.getPageWidth()/2)-(image.getHeight()/2)), (float)((pageInfo.getPageHeight()/2)-(image.getHeight()/2)), paint);
+        Bitmap image = Bitmap.createScaledBitmap(Image.getImage(), pageInfo.getPageWidth() / 2, pageInfo.getPageWidth() / 2, true);
+        canvas.drawBitmap(image, (float) ((pageInfo.getPageWidth() / 2) - (image.getHeight() / 2)), (float) ((pageInfo.getPageHeight() / 2) - (image.getHeight() / 2)), paint);
 
-//        canvas.drawCircle(pageInfo.getPageWidth()/2,
-//                pageInfo.getPageHeight()/2,
-//                150,
-//                paint);
     }
 }
