@@ -68,7 +68,7 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter == null) {
-            Toast.makeText(this, "this device doesn't support NFC.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -78,7 +78,7 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 dialog = new ProgressDialog(con);
-                dialog.setMessage("Tag Your Card Please");
+                dialog.setMessage(getResources().getString(R.string.tag_nfc_card));
                 dialog.show();
 
                 phoneNumber = requests.get(position).getPhoneNumber();
@@ -144,7 +144,7 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
         if (message != null) {
             writeTag(currentTag, message);
             dialog.dismiss();
-            Toast.makeText(this, "Done", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.done, Toast.LENGTH_LONG).show();
         }
 
         String toSend = "{";

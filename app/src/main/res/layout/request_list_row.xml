@@ -67,7 +67,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/emplyee_request_childname"
+        android:text="@string/employee_request_childname"
         android:textColor="@color/colorBlack"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/request_list_childname"

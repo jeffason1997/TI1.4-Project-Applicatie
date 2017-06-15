@@ -174,11 +174,11 @@ public class DiplomaActivity extends AppCompatActivity {
 
             openScreenshot(imageFile);
 
-            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_LONG).show();
         } catch (Throwable e) {
             // Several error may come out with file handling or OOM
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Error while saving", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.error_saved, Toast.LENGTH_LONG).show();
         }
     }
 

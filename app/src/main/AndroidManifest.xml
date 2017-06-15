@@ -44,9 +44,11 @@
         <activity android:name=".EmployeeClasses.Employee_setupActivity" />
         <activity android:name=".AtRide.AtRideActivity" />
         <activity android:name=".AtRide.AtRideListeningActivity" />
+        <activity android:name=".EmployeeClasses.Employee_requestedlistActivity" />
+        <activity android:name=".LoginEmployeeActivity/>
         <activity android:name=".DiplomaClasses.DiplomaActivity" />
         <activity android:name=".CardClasses.SelectCardActivity"/>
-        <activity android:name=".EmployeeClasses.Employee_requestedlistActivity"></activity>
+        </activity>
     </application>
 
 </manifest>

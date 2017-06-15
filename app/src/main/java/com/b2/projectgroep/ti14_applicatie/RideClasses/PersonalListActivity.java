@@ -61,7 +61,7 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
         String[] params = new String[]{"{\"cardId\":\"" + cardNumber + "\"}"};
         getTableTask.execute(params);
         dialog = new ProgressDialog(this);
-        dialog.setMessage("Waiting for server response");
+        dialog.setMessage(getResources().getString(R.string.waiting_server_response));
         dialog.show();
     }
 
