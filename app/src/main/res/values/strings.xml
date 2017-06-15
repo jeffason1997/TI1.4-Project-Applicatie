@@ -3,11 +3,12 @@
     <string name="inlog_button">Log in</string>
     <string name="testRide_black_mamba_title">Black Mamba</string>
     <string name="testRide_black_mamba_type">Rollercoaster</string>
-    <string name="testRide_black_mamba_information">Description of the Cobra here</string>
+    <string name="testRide_black_mamba_information">Black mambas are fast, nervous, lethally venomous, and when threatened, highly aggressive.
+        They have been blamed for numerous human deaths, and African myths exaggerate their capabilities to legendary proportions.
+        For these reasons, the black mamba is widely considered the world’s deadliest snake.</string>
     <string name="testRide_dreamtown_title">Dreamtown</string>
     <string name="testRide_dreamtown_type">Relaxing ride</string>
-    <string name="testRide_dreamtown_information">If there is something you can never get enough from, it is a carousel.
-        A crazy attraction for the young visitors.  </string>
+    <string name="testRide_dreamtown_information">If there is something you can never get enough from, it is a carousel.</string>
     <string name="testRide_fire_machine_title">Fire Machine</string>
     <string name="testRide_fire_machine_type">Rollercoaster</string>
     <string name="testRide_fire_machine_information">Trucker Pete Shaw gives up his soul to become a hellblazing trucker,
@@ -22,11 +23,10 @@
         During the subsequent ten thousand years, all of the races were enslaved by the Heaven Fighting Race.
         They were cruelly treated, and lived beneath the shadow of terror.</string>
     <string name="wrong_login">Wrong ID</string>
-    <string name="inlog_text">Login ID/Pass number:</string>
     <string name="login_image_description">Generic picture</string>
     <string name="welcome_text">Welcome to the Essteling</string>
     <string name="Eread_name_parent">Name Parent/Guardian</string>
-    <string name="Eread_phonenumber">Phonenumber</string>
+    <string name="phonenumber_text">Phonenumber</string>
     <string name="Eread_name_child">Name Child</string>
     <string name="Echoose_cardnumber">Card Number</string>
     <string name="Esetup_name_parent">Name</string>
@@ -42,4 +42,7 @@
 
     <string name="get_diplome">Get your diploma!</string>
     <string name="text_diploma">I achieved my Essteling diploma!!!</string>
+    <string name="employee_choose_request">Requested cards</string>
+    <string name="emplyee_request_childname">Name child</string>
+    <string name="wrong_emplyee_code">Wrong login code</string>
 </resources>

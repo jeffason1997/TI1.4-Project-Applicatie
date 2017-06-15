@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="@string/inlog_text"
+        android:text="@string/phonenumber_text"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:layout_marginLeft="137dp"

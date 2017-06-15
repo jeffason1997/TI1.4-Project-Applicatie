@@ -2,24 +2,32 @@
 <resources>
     <string name="app_name">TI1.4-Applicatie</string>
     <string name="inlog_button">inloggen</string>
-    <string name="testRide_black_mamba_title">Python</string>
+    <string name="testRide_black_mamba_title">Black Mamba</string>
     <string name="testRide_black_mamba_type">Achtbaan</string>
-    <string name="testRide_black_mamba_information">Beschrijving van de python hier</string>
-    <string name="testRide_dreamtown_title">Draaimolen</string>
+    <string name="testRide_black_mamba_information">Zwarte mambas zijn snel, nervue, dodelijk giftig, en wanneer bedreigd, zeer aggresief.
+        Ze hebben de schuld gekeren voor meerdere dode mensen, en Afrikaans mythes overdrijven hun vaardigheden tot legendarische proporties.
+        Door deze redenen, is de zwarte mamba veronderstelt de dodelijkste slang van de wereld </string>
+    <string name="testRide_dreamtown_title">Dreamtown</string>
     <string name="testRide_dreamtown_type">Rustig ritje</string>
-    <string name="testRide_dreamtown_information">Beschrijving van de draaimolen hier</string>
-    <string name="testRide_fire_machine_title">Houten achtbaan</string>
+    <string name="testRide_dreamtown_information">Als je ergens nooit genoeg van krijgt dan is het wel een draaimolen.</string>
+    <string name="testRide_fire_machine_title">Fire Machine</string>
     <string name="testRide_fire_machine_type">Achtbaan</string>
-    <string name="testRide_fire_machine_information">Beschrijving van de houten achtbaan hier</string>
-    <string name="testRide_spirit_realm_title">Lange Jan</string>
+    <string name="testRide_fire_machine_information">Trucker Pete Shaw geeft zijn ziel op om een hellblazing trucker te worden,
+        om te vechten tegen de naar kracht hongerige Jarrett,
+        de zoon van de duivel zelf.
+        Ze noemen hem de Fire Machine.</string>
+    <string name="testRide_spirit_realm_title">Spirit Realm</string>
     <string name="testRide_spirit_realm_type">Onstpannend / sprookje</string>
-    <string name="testRide_spirit_realm_information">Beschrijving van Lange Jan hier</string>
+    <string name="testRide_spirit_realm_information">Dertigduizend jaar geleden, het hemel vechten ras wie zichzelf "Gods" noemen vielen de Spirit Realm binnen.
+        Honderd rassen stonden op en boden weerstand, maar uiteindelijk leden ze een verpletterende nederlaag.
+        Het mensen ras was de eerste die zichzelf overgaf, en de rest of de honderd rassen volgenden snel.
+        Tijdens de volgende duizend jaren, werden alle rassen slaven van de hemel vechten ras.
+        Ze werden wreed behandeld, en leefde onder de schaduw of terror.</string>
     <string name="wrong_login">Verkeerde ID</string>
-    <string name="inlog_text">Inlog ID/Pasnummer:</string>
     <string name="login_image_description">Algemeen plaatje</string>
     <string name="welcome_text">Welkom bij de Essteling</string>
     <string name="Eread_name_parent">Naam Ouder/Verzorger</string>
-    <string name="Eread_phonenumber">Telefoonnummer</string>
+    <string name="phonenumber_text">Telefoonnummer</string>
     <string name="Eread_name_child">Naam Kind</string>
     <string name="Echoose_cardnumber">Kaart Nummer</string>
     <string name="Esetup_name_parent">Naam</string>
@@ -35,4 +43,7 @@
 
     <string name="get_diplome">Verkrijg hier je diploma!</string>
     <string name="text_diploma">Ik heb mijn Essteling diploma gehaald!!!</string>
+    <string name="employee_choose_request">Aangevraagde kaarten</string>
+    <string name="emplyee_request_childname">Naam kind</string>
+    <string name="wrong_emplyee_code">Verkeerde login code</string>
 </resources>

@@ -1,21 +1,27 @@
 package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.net.Uri;
+import android.os.Environment;
+import android.print.PrintManager;
 import android.provider.MediaStore;
+import android.support.v4.print.PrintHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,30 +29,32 @@ import android.widget.Toast;
 import com.b2.projectgroep.ti14_applicatie.R;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Diploma extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
     ImageView imageView = null;
-    Bitmap image = null;
+    String name,surname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diploma);
 
-
+        System.out.println(getIntent().getExtras().getString("name"));
         ListView diplomaLV = (ListView) findViewById(R.id.diploma_lv_id);
         imageView = (ImageView) findViewById(R.id.diploma_picture);
         ArrayList<Ride> dpVisited = new ArrayList<>(Ride.getTestRides().values());
         DiplomaAdapter dpAdapter = new DiplomaAdapter(getApplicationContext(),dpVisited);
         diplomaLV.setAdapter(dpAdapter);
 
-        if (image!=null) {
-            System.out.println(image.toString());
-            imageView.setImageBitmap(image);
+        if (Image.getImage() != null) {
+            imageView.setImageBitmap(Image.getImage());
         }
     }
 
@@ -65,10 +73,11 @@ public class Diploma extends AppCompatActivity {
                 return true;
             }
             case R.id.diploma_menu_save_id : {
-                Toast.makeText(getApplicationContext(), "Save", Toast.LENGTH_LONG).show();
+                takeScreenshot();
                 return true;
             }
             case R.id.diploma_menu_print_id: {
+                doPrint();
                 Toast.makeText(getApplicationContext(), "Print", Toast.LENGTH_LONG).show();
                 return true;
             }
@@ -90,8 +99,8 @@ public class Diploma extends AppCompatActivity {
         if(requestCode == 1 && resultCode == RESULT_OK) {
             try {
                 Uri selectedimg = data.getData();
-                image = getCircularBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedimg));
-                imageView.setImageBitmap(image);
+                Image.setImage(getCircularBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedimg)));
+                imageView.setImageBitmap(Image.getImage());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -131,8 +140,52 @@ public class Diploma extends AppCompatActivity {
         return output;
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        Log.i("Message", "kut jeffrey");
+    private void takeScreenshot() {
+        Date now = new Date();
+        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
+
+        try {
+            // image naming and path  to include sd card  appending name you choose for file
+            String mPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
+
+            // create bitmap screen capture
+            View v1 = getWindow().getDecorView().getRootView();
+            v1.setDrawingCacheEnabled(true);
+            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+            v1.setDrawingCacheEnabled(false);
+
+            File imageFile = new File(mPath);
+
+            FileOutputStream outputStream = new FileOutputStream(imageFile);
+            int quality = 100;
+            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
+            outputStream.flush();
+            outputStream.close();
+
+            openScreenshot(imageFile);
+
+            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+        } catch (Throwable e) {
+            // Several error may come out with file handling or OOM
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "Error while saving", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void openScreenshot(File imageFile) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        Uri uri = Uri.fromFile(imageFile);
+        intent.setDataAndType(uri, "image/*");
+        startActivity(intent);
+    }
+
+    private void doPrint() {
+        PrintManager printManager = (PrintManager) this.getSystemService(Context.PRINT_SERVICE);
+
+        String jobName = this.getString(R.string.app_name) + " Document";
+
+        printManager.print(jobName, new MyPrintDocumentAdapter(this), null);
+
     }
 }
