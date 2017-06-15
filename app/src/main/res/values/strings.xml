@@ -58,4 +58,6 @@
     <string name="saved">Saved</string>
     <string name="error_saved">Error while saving</string>
     <string name="done">Done</string>
+    <string name="grats">Congratulations</string>
+    <string name="diploma_tekst">You earned your Essteling diploma</string>
 </resources>
