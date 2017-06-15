@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/rideImage_diploma_image"
+        android:layout_width="72dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/background_dark"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/textView8"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="38dp"
+        android:layout_height="0dp"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorBlack"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/rideImage_diploma_image"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/diploma_rideNameTitle_tv"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorGreen"
+        android:padding="0dp"
+        android:paddingBottom="0dp"
+        android:paddingEnd="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingStart="0dp"
+        android:paddingTop="0dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/diploma_visitedText1"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@+id/diploma_rideNameTitle_tv"
+        app:layout_constraintLeft_toRightOf="@+id/textView6"
+        android:layout_marginLeft="26dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/diploma_visitedText2"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/diploma_rideNameDesc_tv"
+        app:layout_constraintLeft_toRightOf="@+id/diploma_rideTimes_tv"
+        android:layout_marginLeft="0dp" />
+
+    <TextView
+        android:id="@+id/diploma_rideNameDesc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintLeft_toRightOf="@+id/textView7"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/diploma_rideNameTitle_tv" />
+
+    <TextView
+        android:id="@+id/diploma_rideTimes_tv"
+        android:layout_width="33dp"
+        android:layout_height="18dp"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintLeft_toRightOf="@+id/textView6"
+        android:layout_marginLeft="26dp" />
+
+</android.support.constraint.ConstraintLayout>
