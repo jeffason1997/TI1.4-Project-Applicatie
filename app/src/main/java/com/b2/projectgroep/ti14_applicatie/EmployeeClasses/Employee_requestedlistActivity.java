@@ -68,7 +68,7 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter == null) {
-            Toast.makeText(this, "this device doesn't support NFC.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
