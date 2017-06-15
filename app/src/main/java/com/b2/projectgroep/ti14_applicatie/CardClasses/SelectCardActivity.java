@@ -65,7 +65,7 @@ public class SelectCardActivity extends AppCompatActivity implements GetCardsTas
         String[] params = new String[] {"{\"phoneNumber\":\"" + phoneNumber + "\"}"};
         getCards.execute(params);
         dialog = new ProgressDialog(this);
-        dialog.setMessage("Waiting for server response");
+        dialog.setMessage(getResources().getString(R.string.waiting_server_response));
         dialog.show();
 
     }

@@ -62,7 +62,7 @@ public class Employee_setupActivity extends AppCompatActivity implements TableTa
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter == null) {
-            Toast.makeText(this, "this device doesn't support NFC.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -77,8 +77,8 @@ public class Employee_setupActivity extends AppCompatActivity implements TableTa
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(con);
                     builder.setCancelable(true);
-                    builder.setTitle("Empty Field");
-                    builder.setMessage("One or multiple fields are empty");
+                    builder.setTitle(R.string.empty_field);
+                    builder.setMessage(R.string.empty_fields);
                     builder.setPositiveButton("OK",
                             new DialogInterface.OnClickListener() {
                                 @Override
@@ -90,7 +90,7 @@ public class Employee_setupActivity extends AppCompatActivity implements TableTa
 
                 } else {
                     dialog = new ProgressDialog(Employee_setupActivity.this);
-                    dialog.setMessage("Tag NFC Card please");
+                    dialog.setMessage(getResources().getString(R.string.tag_nfc_card));
                     dialog.show();
                 }
             }

@@ -4,9 +4,7 @@
     <string name="inlog_button">inloggen</string>
     <string name="testRide_black_mamba_title">Black Mamba</string>
     <string name="testRide_black_mamba_type">Achtbaan</string>
-    <string name="testRide_black_mamba_information">Zwarte mambas zijn snel, nervue, dodelijk giftig, en wanneer bedreigd, zeer aggresief.
-        Ze hebben de schuld gekeren voor meerdere dode mensen, en Afrikaans mythes overdrijven hun vaardigheden tot legendarische proporties.
-        Door deze redenen, is de zwarte mamba veronderstelt de dodelijkste slang van de wereld </string>
+    <string name="testRide_black_mamba_information">"Zwarte mambas zijn snel, nerveus, dodelijk giftig, en wanneer bedreigd, zeer aggresief.\n        Ze hebben de schuld gekeren voor meerdere dode mensen, en Afrikaans mythes overdrijven hun vaardigheden tot legendarische proporties.\n        Door deze redenen, is de zwarte mamba veronderstelt de dodelijkste slang van de wereld "</string>
     <string name="testRide_dreamtown_title">Dreamtown</string>
     <string name="testRide_dreamtown_type">Rustig ritje</string>
     <string name="testRide_dreamtown_information">Als je ergens nooit genoeg van krijgt dan is het wel een draaimolen.</string>
@@ -45,7 +43,17 @@
     <string name="text_diploma">Ik heb mijn Essteling diploma gehaald!!!</string>
     <string name="employee_choose_request">Aangevraagde kaarten</string>
     <string name="emplyee_request_childname">Naam kind</string>
+    <string name="no_nfc_supported">Dit apparaat ondersteund geen NFC.</string>
+    <string name="nfc_off">NFC staat uit</string>
+    <string name="waiting_server_response">Wachten op server.</string>
+    <string name="tag_nfc_card">Tag NFC kaart.</string>
+    <string name="empty_field">Leeg veld</string>
+    <string name="empty_fields">Een of meerdere velden zijn leeg.</string>
     <string name="wrong_emplyee_code">Verkeerde login code</string>
+<<<<<<< HEAD
     <string name="username">Gebruikersnaam</string>
     <string name="password">Wachtwoord</string>
+=======
+  
+>>>>>>> 5c0c52ff142ef0018b7b1add63c34e39838ceb6a
 </resources>
