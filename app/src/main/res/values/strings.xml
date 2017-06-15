@@ -36,7 +36,7 @@
     <string name="error_loading_data">Error whilst loading data</string>
     <string name="lv_kind_tijd">Your child was here at</string>
     <string name="Read">Read</string>
-    <string name="Wrtie">Write</string>
+    <string name="Wrtie">Requested</string>
     <string name="diploma_visitedText1">You visited</string>
     <string name="diploma_visitedText2">times</string>
 
@@ -51,5 +51,7 @@
     <string name="empty_field">Empty field</string>
     <string name="empty_fields">One or multiple fields are empty.</string>
     <string name="wrong_emplyee_code">Wrong login code</string>
-
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="wrong_credentials">Wrong credentials</string>
 </resources>

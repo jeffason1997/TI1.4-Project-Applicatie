@@ -30,7 +30,6 @@ public class LogInTask extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String answer = "Start";
-        System.out.println(params[0]);
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -62,8 +61,8 @@ public class LogInTask extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String s) {
         try {
             JSONArray jo = new JSONArray(s);
-            String role = jo.getJSONObject(0).getString("role");
-            listener.onSuccesMessage(role);
+            String password = jo.getJSONObject(0).getString("password");
+            listener.onSuccesMessage(password);
         } catch (Exception e) {
             listener.onErrorMessage(s);
         }
