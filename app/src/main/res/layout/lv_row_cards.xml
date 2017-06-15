@@ -13,6 +13,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Eread_name_child"
+        android:textColor="@color/colorBlack"
         app:layout_constraintLeft_toRightOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
@@ -33,6 +34,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:text="@string/Echoose_cardnumber"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintLeft_toRightOf="@+id/imageView3" />
 
@@ -40,11 +42,12 @@
         android:id="@+id/card_child_name_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintLeft_toRightOf="@+id/card_text_name"
+        android:layout_marginBottom="0dp"
         android:layout_marginLeft="32dp"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/card_text_name"
-        android:layout_marginBottom="0dp" />
+        app:layout_constraintLeft_toRightOf="@+id/card_text_name" />
 
     <TextView
         android:id="@+id/card_child_surname_id"
@@ -53,6 +56,7 @@
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="32dp"
         android:text="TextView"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/card_child_name_id"
         app:layout_constraintLeft_toRightOf="@+id/card_child_name_id" />
 
@@ -63,6 +67,7 @@
         android:layout_marginBottom="-1dp"
         android:layout_marginLeft="0dp"
         android:text="TextView"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/card_text_cardNumber_id"
         app:layout_constraintLeft_toLeftOf="@+id/card_child_name_id" />
 </android.support.constraint.ConstraintLayout>

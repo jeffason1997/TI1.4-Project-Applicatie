@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,7 +42,7 @@ public class LoginEmployeeActivity extends AppCompatActivity implements TableTas
                 lastPasswordEntered = passwordInput.getText().toString();
 
                 dialog = new ProgressDialog(LoginEmployeeActivity.this);
-                dialog.setMessage("Waiting for server response...");
+                dialog.setMessage(getResources().getString(R.string.waiting_server_response));
                 dialog.show();
             }
         });
@@ -56,8 +57,8 @@ public class LoginEmployeeActivity extends AppCompatActivity implements TableTas
         if(s.equals(lastPasswordEntered)) {
             Intent i = new Intent(getApplicationContext(), Employee_chooseActivity.class);
             startActivity(i);
-        } else {
-            Toast.makeText(getApplicationContext(), "Wrong password", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getApplicationContext(), R.string.wrong_credentials, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -66,5 +67,14 @@ public class LoginEmployeeActivity extends AppCompatActivity implements TableTas
         if(dialog != null) {
             dialog.dismiss();
         }
+
+        Toast.makeText(getApplicationContext(), R.string.wrong_credentials, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        usernameInput.setText("");
+        passwordInput.setText("");
     }
 }
