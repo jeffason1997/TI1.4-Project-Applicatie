@@ -56,6 +56,7 @@ public class DiplomaActivity extends AppCompatActivity {
 
         name = getIntent().getExtras().getString("name");
         surname = getIntent().getExtras().getString("surname");
+
         personalActivities = (ArrayList<PersonalActivity>)getIntent().getSerializableExtra("personalActivities");
         ListView diplomaLV = (ListView) findViewById(R.id.diploma_lv_id);
         imageView = (ImageView) findViewById(R.id.diploma_picture);
@@ -80,12 +81,6 @@ public class DiplomaActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.diploma_menu_photo_id : {
                 dispatchTakePictureIntent();
-                return true;
-            }
-            case R.id.diploma_menu_save_id : {
-                Intent i = new Intent(getApplicationContext(), AchievementActivity.class);
-                i.putExtra("pa", personalActivities);
-                startActivity(i);
                 return true;
             }
             case R.id.diploma_menu_print_id: {

@@ -4,12 +4,7 @@
 
     <item
         android:id="@+id/diploma_menu_photo_id"
-        android:icon="@android:drawable/ic_menu_camera"
-        android:title="Item"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/diploma_menu_save_id"
-        android:icon="@android:drawable/ic_menu_save"
+        android:icon="@drawable/camera_icon"
         android:title="Item"
         app:showAsAction="always" />
     <item
