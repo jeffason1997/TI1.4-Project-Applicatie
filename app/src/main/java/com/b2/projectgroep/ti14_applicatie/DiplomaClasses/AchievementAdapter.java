@@ -47,10 +47,10 @@ public class AchievementAdapter extends ArrayAdapter<Achievement> {
         progressBar.setProgress(achievement.progress);
 
         TextView percentage = (TextView) convertView.findViewById(R.id.achievement_row_percentage);
-        if(((double)(achievement.progress) / (double)(achievement.maxProgress)) > 1) {
+        if(((double)(achievement.progress) / (double)(achievement.maxProgress)) >= 1) {
             percentage.setText("100%");
         } else {
-            percentage.setText((double)(achievement.progress) / (double)(achievement.maxProgress) * 100 + "%");
+            percentage.setText( (int) ((double)(achievement.progress) / (double)(achievement.maxProgress) * 100)  + "%");
         }
 
         return convertView;
