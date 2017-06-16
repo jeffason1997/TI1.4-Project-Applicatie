@@ -54,7 +54,6 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
     private ProgressDialog dialog;
     Tag currentTag;
     Context con;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,12 +95,19 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
             }
         });
 
+        dialog = new ProgressDialog(con);
+        dialog.setMessage(getResources().getString(R.string.waiting_server_response));
+        dialog.show();
+
         GetRequestedCardsTak task = new GetRequestedCardsTak(this);
         task.execute();
     }
 
     @Override
     public void onRequestAvailable(Request request) {
+        if(dialog != null) {
+            dialog.dismiss();
+        }
         if (!requests.contains(request)) {
             requests.add(request);
             adapter.notifyDataSetChanged();
@@ -349,11 +355,17 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
 
     @Override
     public void onSuccesMessage(String s) {
+        if(dialog != null) {
+            dialog.dismiss();
+        }
         Log.i("Message", s);
     }
 
     @Override
     public void onErrorMessage(String s) {
+        if(dialog != null) {
+            dialog.dismiss();
+        }
         Log.i("Message", s);
     }
 }
