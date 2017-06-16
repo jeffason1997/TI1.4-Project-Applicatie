@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
 
+import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementActivity;
 import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.DiplomaActivity;
 import com.b2.projectgroep.ti14_applicatie.R;
 
@@ -75,11 +76,19 @@ public class PersonalListActivity extends AppCompatActivity implements GetTableT
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.parent_menu_print: {
+            case R.id.parent_menu_diploma: {
                 Intent i = new Intent(getApplicationContext(), DiplomaActivity.class);
                 i.putExtra("name", name);
                 i.putExtra("surname", surname);
                 i.putExtra("personalActivities",personalActivities);
+                startActivity(i);
+                return true;
+            }
+            case R.id.parent_menu_achievements : {
+                Intent i = new Intent(getApplicationContext(), AchievementActivity.class);
+                i.putExtra("name", name);
+                i.putExtra("surname", surname);
+                i.putExtra("pa",personalActivities);
                 startActivity(i);
                 return true;
             }
