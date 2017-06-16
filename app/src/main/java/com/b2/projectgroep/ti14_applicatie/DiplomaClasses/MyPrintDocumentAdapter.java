@@ -2,9 +2,11 @@ package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.os.CancellationSignal;
@@ -16,10 +18,16 @@ import android.print.PrintDocumentInfo;
 import android.print.PrintManager;
 import android.print.pdf.PrintedPdfDocument;
 
+import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses.Achievement;
 import com.b2.projectgroep.ti14_applicatie.R;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Created by Jeffrey on 12-6-2017.
@@ -33,11 +41,13 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
     public PdfDocument myPdfDocument;
     public int totalpages = 1;
     String name,surname;
+    ArrayList<PersonalActivity> personalActivities;
 
-    public MyPrintDocumentAdapter(Context context, String name, String surname) {
+    public MyPrintDocumentAdapter(Context context, String name, String surname, ArrayList<PersonalActivity> personalActivities) {
         this.context = context;
         this.name = name;
         this.surname = surname;
+        this.personalActivities = personalActivities;
     }
 
     @Override
@@ -130,25 +140,46 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setTextSize(25);
-        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTextAlign(Paint.Align.LEFT);
         canvas.drawText(
                 context.getResources().getString(R.string.grats) + " " + name +" "+ surname,
-                canvas.getWidth()/2-50,
+                canvas.getWidth()/10,
                 titleBaseLine,
                 paint);
 
         paint.setTextSize(14);
-        canvas.drawText(""+ context.getResources().getString(R.string.diploma_tekst), canvas.getWidth()/2-50, titleBaseLine + 25, paint);
-
-        if (pagenumber % 2 == 0)
-            paint.setColor(Color.RED);
-        else
-            paint.setColor(Color.GREEN);
+        canvas.drawText(""+ context.getResources().getString(R.string.diploma_tekst), canvas.getWidth()/10, titleBaseLine + 25, paint);
 
         PdfDocument.PageInfo pageInfo = page.getInfo();
 
-        Bitmap image = Bitmap.createScaledBitmap(Image.getImage(), pageInfo.getPageWidth() / 2, pageInfo.getPageWidth() / 2, true);
-        canvas.drawBitmap(image, (float) ((pageInfo.getPageWidth() / 2) - (image.getHeight() / 2)), (float) ((pageInfo.getPageHeight() / 2) - (image.getHeight() / 2)), paint);
+        Bitmap image = Bitmap.createScaledBitmap(Image.getImage(), pageInfo.getPageWidth() / 6, pageInfo.getPageWidth() / 6, true);
+        canvas.drawBitmap(image, pageInfo.getPageWidth() - (int)(pageInfo.getPageWidth()/2.5), pageInfo.getPageHeight()/40, paint);
 
+        int startHeightRides = pageInfo.getPageHeight()/15;
+        ArrayList<Ride> allRides = new ArrayList<>(Ride.getTestRides().values());
+        for(int x = 0; x < allRides.size(); x++) {
+            Bitmap imagePa = BitmapFactory.decodeResource(context.getResources(), allRides.get(x).getRideImage());
+            imagePa = Bitmap.createScaledBitmap(imagePa, 60, 60, false);
+            canvas.drawBitmap(imagePa,pageInfo.getPageWidth()/10, titleBaseLine + startHeightRides + (x * 70), paint);
+            canvas.drawText(context.getResources().getString(allRides.get(x).getName()), pageInfo.getPageWidth()/10 + 100, titleBaseLine + startHeightRides + (x * 70) + 30, paint);
+            String totalTimes = context.getResources().getString(R.string.diploma_visitedText1) + " " + context.getResources().getString(allRides.get(x).getName()) + " " + getAmount(allRides.get(x).getName(), personalActivities)+ " " + context.getResources().getString(R.string.diploma_visitedText2);
+            canvas.drawText(totalTimes, pageInfo.getPageWidth()/10 + 200, titleBaseLine + startHeightRides + (x * 70) + 30, paint);
+        }
+
+        int startHeightAchievement = titleBaseLine + pageInfo.getPageHeight()/15 + 310;
+        ArrayList<Achievement> achievementsRecieved = Achievement.getCompletedAchievements(personalActivities);
+        for(int x = 0; x < achievementsRecieved.size(); x++) {
+
+        }
+    }
+
+    public int getAmount(int name, ArrayList<PersonalActivity> activities){
+        int counter = 0;
+        for(int i=0;i<activities.size();i++){
+            if(activities.get(i).getRide().getName()==(name)){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
