@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lv_kind_tijd"
-
+        android:textColor="@color/colorBlack"
         app:layout_constraintTop_toBottomOf="@+id/ride_detailedImage"
         android:layout_marginLeft="48dp"
         app:layout_constraintLeft_toLeftOf="parent"
