@@ -58,4 +58,16 @@
     <string name="saved">Saved</string>
     <string name="error_saved">Error while saving</string>
     <string name="done">Done</string>
+    <string name="grats">Congratulations</string>
+    <string name="diploma_tekst">You earned your Essteling diploma</string>
+
+    <string name="achievement_blackmamba_ez">Check in at the Black Mamba at least 1 time.</string>
+    <string name="achievement_blackmamba">Check in at the Black Mamba at least 5 times.</string>
+    <string name="achievement_spirit_ez">Check in at the Spirit Realm at least 1 time.</string>
+    <string name="achievement_spirit">Check in at the Spirit Realm at least 5 times.</string>
+    <string name="achievement_fire_ez">Check in at the Fire Machine at least 1 time.</string>
+    <string name="achievement_fire">Check in at the Fire Machine at least 5 times.</string>
+    <string name="achievement_dream_ez">Check in at the Dreamtown at least 1 time.</string>
+    <string name="achievement_dream">Check in at the Dreamtown at least 5 times.</string>
+    <string name="achievement_allrides">Check in at all the Rides.</string>
 </resources>
