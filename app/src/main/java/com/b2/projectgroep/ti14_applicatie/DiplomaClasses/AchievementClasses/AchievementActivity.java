@@ -2,6 +2,8 @@ package com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.b2.projectgroep.ti14_applicatie.R;
