@@ -56,6 +56,7 @@ public class DiplomaActivity extends AppCompatActivity {
 
         name = getIntent().getExtras().getString("name");
         surname = getIntent().getExtras().getString("surname");
+
         personalActivities = (ArrayList<PersonalActivity>)getIntent().getSerializableExtra("personalActivities");
         ListView diplomaLV = (ListView) findViewById(R.id.diploma_lv_id);
         imageView = (ImageView) findViewById(R.id.diploma_picture);

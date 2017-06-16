@@ -20,6 +20,7 @@ import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementActivity;
 import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.DiplomaActivity;
 import com.b2.projectgroep.ti14_applicatie.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 

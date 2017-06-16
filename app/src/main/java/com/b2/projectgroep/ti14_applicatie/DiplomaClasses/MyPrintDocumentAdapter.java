@@ -127,19 +127,18 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         pagenumber++; // Make sure page numbers start at 1
 
         int titleBaseLine = 72;
-
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setTextSize(25);
         paint.setTextAlign(Paint.Align.CENTER);
         canvas.drawText(
-                R.string.grats + name +" "+ surname,
+                context.getResources().getString(R.string.grats) + " " + name +" "+ surname,
                 canvas.getWidth()/2-50,
                 titleBaseLine,
                 paint);
 
         paint.setTextSize(14);
-        canvas.drawText(""+ R.string.diploma_tekst, canvas.getWidth()/2-50, titleBaseLine + 25, paint);
+        canvas.drawText(""+ context.getResources().getString(R.string.diploma_tekst), canvas.getWidth()/2-50, titleBaseLine + 25, paint);
 
         if (pagenumber % 2 == 0)
             paint.setColor(Color.RED);
