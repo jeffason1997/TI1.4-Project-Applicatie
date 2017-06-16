@@ -15,6 +15,7 @@ import android.nfc.tech.NdefFormatable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -286,14 +287,12 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
         json.put("nameC", firstname);
         json.put("surnameC", surname);
         json.put("cardNumber", cardNumber);
-        System.out.println(cardNumber);
         message = json.toString();
 
         createCorrespondingTable(cardNumber);
 
-
-        System.out.println(message);
-        return message;
+        String toReturn = new String(Base64.encodeToString(message.getBytes(), 0));
+        return toReturn;
 
     }
 
@@ -333,12 +332,12 @@ public class Employee_requestedlistActivity extends AppCompatActivity implements
         }
 
         protected void readCard(String result) {
+            result = new String(Base64.decode(result, 0));
             if (result != null) {
                 JSONObject json = null;
                 try {
                     json = new JSONObject(result);
                     cardNumber = json.getString("cardNumber");
-                    System.out.println(cardNumber + "read");
                 } catch (Exception ex) {
                     System.err.println(ex);
                 }

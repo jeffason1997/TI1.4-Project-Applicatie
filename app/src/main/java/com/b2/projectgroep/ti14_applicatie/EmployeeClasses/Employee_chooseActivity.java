@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.R;
 
@@ -39,4 +40,35 @@ public class Employee_chooseActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        Employee_Read_Info.cardNumber = null;
+        Employee_Read_Info.childName = null;
+        Employee_Read_Info.childSur = null;
+        Employee_Read_Info.phoneNumber = null;
+        Employee_Read_Info.parentName = null;
+        Employee_Read_Info.parentSur = null;
+        super.onResume();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.diploma_menu_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.employee_choose_setup : {
+                Intent i = new Intent(getApplicationContext(), Employee_SetupActivity.class);
+                startActivity(i);
+                return true;
+            }
+            default: {
+                return super.onOptionsItemSelected(item);
+            }
+        }
+    }
 }

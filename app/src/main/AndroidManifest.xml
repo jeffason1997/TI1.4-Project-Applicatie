@@ -48,7 +48,8 @@
         <activity android:name=".LoginClasses.LoginEmployeeActivity" />
         <activity android:name=".DiplomaClasses.DiplomaActivity" />
         <activity android:name=".CardClasses.SelectCardActivity" />
-        <activity android:name=".DiplomaClasses.AchievementClasses.AchievementActivity"></activity>
+        <activity android:name=".DiplomaClasses.AchievementClasses.AchievementActivity" />
+        <activity android:name=".EmployeeClasses.Employee_SetupActivity"></activity>
     </application>
 
 </manifest>

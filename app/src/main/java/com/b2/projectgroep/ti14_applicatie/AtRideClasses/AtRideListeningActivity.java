@@ -13,6 +13,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -99,6 +100,9 @@ public class AtRideListeningActivity extends AppCompatActivity implements TableT
             NdefMessage ndefMessage = ndef.getNdefMessage();
             String message = new String(ndefMessage.getRecords()[0].getPayload());
             message = message.substring(3);
+            System.out.println(message);
+            message = new String(Base64.decode(message.getBytes(), 0));
+            System.out.println(message);
             try {
                 JSONObject jo = new JSONObject(message);
                 String cardId = "card" + jo.getString("cardNumber");
