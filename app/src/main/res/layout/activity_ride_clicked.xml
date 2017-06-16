@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivityDetailedInformation">
+    tools:context="com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivityDetailedActivity">
 
     <TextView
         android:id="@+id/rideNameClicked_tv"
@@ -20,16 +20,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="16dp"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ride_detailedImage"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <ImageView
         android:id="@+id/ride_detailedImage"
@@ -67,11 +67,16 @@
         android:layout_marginStart="17dp"
         android:text="TextView"
         android:textColor="@android:color/black"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ride_detailedDescription"
-        app:layout_constraintLeft_toRightOf="@+id/ride_detailedDescription"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_editor_absoluteY="284dp"
+        tools:layout_editor_absoluteX="229dp" />
+
+    <TextView
+        android:id="@+id/ride_detailedTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lv_kind_tijd"
+        android:textColor="@color/colorBlack"
+        tools:layout_editor_absoluteX="230dp"
+        tools:layout_editor_absoluteY="267dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,10 +1,8 @@
-package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
+package com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.R;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;

@@ -1,12 +1,10 @@
-package com.b2.projectgroep.ti14_applicatie;
+package com.b2.projectgroep.ti14_applicatie.LoginClasses;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -14,6 +12,7 @@ import android.widget.Toast;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.LogInTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.TableTaskListener;
 import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_chooseActivity;
+import com.b2.projectgroep.ti14_applicatie.R;
 
 public class LoginEmployeeActivity extends AppCompatActivity implements TableTaskListener {
 

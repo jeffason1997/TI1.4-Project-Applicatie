@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginClasses.LoginActivity"
             android:theme="@style/loginScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,18 +37,18 @@
                 android:name="android.nfc.action.TECH_DISCOVERD"
                 android:resource="@xml/nfc_tech_filter" />
         </activity>
-        <activity android:name=".RideClasses.PersonalListActivity" />
-        <activity android:name=".RideClasses.PersonalActivityDetailedInformation" />
+        <activity android:name=".RideClasses.PersonalActivityListActivity" />
+        <activity android:name=".RideClasses.PersonalActivityDetailedActivity" />
         <activity android:name=".EmployeeClasses.Employee_chooseActivity" />
         <activity android:name=".EmployeeClasses.Employee_readActivity" />
         <activity android:name=".EmployeeClasses.Employee_setupActivity" />
-        <activity android:name=".AtRide.AtRideActivity" />
-        <activity android:name=".AtRide.AtRideListeningActivity" />
+        <activity android:name=".AtRideClasses.AtRideActivity" />
+        <activity android:name=".AtRideClasses.AtRideListeningActivity" />
         <activity android:name=".EmployeeClasses.Employee_requestedlistActivity" />
-        <activity android:name=".LoginEmployeeActivity" />
+        <activity android:name=".LoginClasses.LoginEmployeeActivity" />
         <activity android:name=".DiplomaClasses.DiplomaActivity" />
         <activity android:name=".CardClasses.SelectCardActivity" />
-        <activity android:name=".DiplomaClasses.AchievementActivity"></activity>
+        <activity android:name=".DiplomaClasses.AchievementClasses.AchievementActivity"></activity>
     </application>
 
 </manifest>

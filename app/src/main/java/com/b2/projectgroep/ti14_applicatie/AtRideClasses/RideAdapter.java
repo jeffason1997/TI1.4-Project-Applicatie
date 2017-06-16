@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie.AtRide;
+package com.b2.projectgroep.ti14_applicatie.AtRideClasses;
 
 import android.content.Context;
 import android.view.LayoutInflater;

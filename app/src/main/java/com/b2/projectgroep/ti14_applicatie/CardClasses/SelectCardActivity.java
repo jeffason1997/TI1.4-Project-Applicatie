@@ -13,13 +13,8 @@ import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetCardsTask;
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetCardsWithPhoneTask;
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTask;
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.GetTableTaskListener;
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.TableTaskListener;
 import com.b2.projectgroep.ti14_applicatie.R;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivityAdapter;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivityDetailedInformation;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity;
+import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivityListActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,7 +48,7 @@ public class SelectCardActivity extends AppCompatActivity implements GetCardsTas
         listViewer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getApplicationContext(), PersonalListActivity.class);
+                Intent i = new Intent(getApplicationContext(), PersonalActivityListActivity.class);
                 i.putExtra("cardID", "card" + cards.get(position).getId());
                 i.putExtra("name",cards.get(position).getName());
                 i.putExtra("surname",cards.get(position).getSurName());

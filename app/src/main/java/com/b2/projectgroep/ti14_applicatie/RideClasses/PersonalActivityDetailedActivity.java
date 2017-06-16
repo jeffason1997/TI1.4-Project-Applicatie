@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.b2.projectgroep.ti14_applicatie.R;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
-public class PersonalActivityDetailedInformation extends AppCompatActivity {
+public class PersonalActivityDetailedActivity extends AppCompatActivity {
 
     private PersonalActivity personalActivity;
     private TextView name;

@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
+package com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,9 +9,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses.Achievement;
 import com.b2.projectgroep.ti14_applicatie.R;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import java.util.ArrayList;
 
@@ -47,10 +46,10 @@ public class AchievementAdapter extends ArrayAdapter<Achievement> {
         progressBar.setProgress(achievement.progress);
 
         TextView percentage = (TextView) convertView.findViewById(R.id.achievement_row_percentage);
-        if(((double)(achievement.progress) / (double)(achievement.maxProgress)) > 1) {
+        if(((double)(achievement.progress) / (double)(achievement.maxProgress)) >= 1) {
             percentage.setText("100%");
         } else {
-            percentage.setText((double)(achievement.progress) / (double)(achievement.maxProgress) * 100 + "%");
+            percentage.setText( (int) ((double)(achievement.progress) / (double)(achievement.maxProgress) * 100)  + "%");
         }
 
         return convertView;
