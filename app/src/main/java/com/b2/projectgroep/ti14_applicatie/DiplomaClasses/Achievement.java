@@ -78,4 +78,15 @@ public class Achievement {
         toReturn.add(allrides);
         return toReturn;
     }
+
+    public static ArrayList<Achievement> getCompletedAchievements(ArrayList<PersonalActivity> personalActivities) {
+        ArrayList<Achievement> allAchievements = Achievement.calculateAchievements(personalActivities);
+        ArrayList<Achievement> completed = new ArrayList<>();
+        for(int x = 0; x < allAchievements.size(); x++) {
+            if(allAchievements.get(x).progress >= allAchievements.get(x).maxProgress) {
+                completed.add(allAchievements.get(x));
+            }
+        }
+        return completed;
+    }
 }

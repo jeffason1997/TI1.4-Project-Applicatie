@@ -115,14 +115,22 @@ public class DiplomaActivity extends AppCompatActivity {
 
     public static Bitmap getCircularBitmap(Bitmap bitmap) {
         Bitmap output;
+        Bitmap mutableBitmap;
+
+        int offsetTop = 0;
+        int offsetLeft= 0;
 
         if (bitmap.getWidth() > bitmap.getHeight()) {
-            output = Bitmap.createBitmap(bitmap.getHeight(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+            offsetLeft = (int)(((double)(bitmap.getWidth() - bitmap.getHeight())) / 2.0);
+            output = Bitmap.createBitmap(bitmap, (int)(((double)(bitmap.getWidth() - bitmap.getHeight())) / 2.0), 0, bitmap.getHeight(), bitmap.getHeight());
+            mutableBitmap = output.createBitmap(output.getHeight(), output.getHeight(), Bitmap.Config.ARGB_8888);
         } else {
-            output = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getWidth(), Bitmap.Config.ARGB_8888);
+            offsetTop = (int)(((double)(bitmap.getHeight() - bitmap.getWidth())) / 2.0);
+            output = Bitmap.createBitmap(bitmap, 0, (int)(((double)(bitmap.getHeight() - bitmap.getWidth())) / 2.0), bitmap.getWidth(), bitmap.getWidth());
+            mutableBitmap = output.createBitmap(output.getWidth(), output.getWidth(), Bitmap.Config.ARGB_8888);
         }
 
-        Canvas canvas = new Canvas(output);
+        Canvas canvas = new Canvas(mutableBitmap);
 
         final int color = 0xffffffff;
         final Paint paint = new Paint();
@@ -131,59 +139,40 @@ public class DiplomaActivity extends AppCompatActivity {
         paint.setAntiAlias(true);
         canvas.drawARGB(0, 0, 0, 0);
         paint.setColor(color);
+        final Rect dest;
 
-        if (bitmap.getWidth() > bitmap.getHeight()) {
-            float r = bitmap.getHeight() / 2;
-            canvas.drawCircle(bitmap.getHeight()/2, bitmap.getHeight()/2, r, paint);
+        boolean shouldScale = false;
+
+        if(((double)bitmap.getWidth())/((double)bitmap.getHeight()) > 1 &&  ((double)bitmap.getWidth())/((double)bitmap.getHeight()) > 1.3) {
+            shouldScale = true;
+        } else if(((double)bitmap.getHeight())/((double)bitmap.getWidth()) > 1 &&  ((double)bitmap.getHeight())/((double)bitmap.getWidth()) > 1.3) {
+            shouldScale = true;
+        }
+
+        if(shouldScale) {
+            if (bitmap.getWidth() > bitmap.getHeight()) {
+                float r = bitmap.getHeight() / 2;
+                canvas.drawCircle((bitmap.getHeight() / 2), bitmap.getHeight() / 2, r, paint);
+                dest = new Rect(-offsetLeft, 0, bitmap.getWidth(), bitmap.getHeight());
+                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+                canvas.drawBitmap(Bitmap.createScaledBitmap(bitmap, (int) (bitmap.getWidth() / 1.3), (int) (bitmap.getHeight()), false), rect, dest, paint);
+            } else {
+                dest = new Rect(0, -offsetTop, bitmap.getWidth(), bitmap.getHeight());
+                float r = bitmap.getWidth() / 2;
+                canvas.drawCircle((bitmap.getWidth() / 2), bitmap.getWidth() / 2, r, paint);
+                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+                canvas.drawBitmap(Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), (int) (bitmap.getHeight() / 1.3), false), rect, dest, paint);
+            }
         } else {
             float r = bitmap.getWidth() / 2;
-            canvas.drawCircle(bitmap.getWidth()/2, bitmap.getWidth()/2, r, paint);
+            canvas.drawCircle((bitmap.getWidth() / 2), bitmap.getWidth() / 2, r, paint);
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+            canvas.drawBitmap(Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), (int) (bitmap.getHeight()), false), rect, rect, paint);
         }
 
+        Log.i("Message", shouldScale + "");
 
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, rect, rect, paint);
-        return output;
-    }
-
-    private void takeScreenshot() {
-        Date now = new Date();
-        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
-
-        try {
-            // image naming and path  to include sd card  appending name you choose for file
-            String mPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
-
-            // create bitmap screen capture
-            View v1 = getWindow().getDecorView().getRootView();
-            v1.setDrawingCacheEnabled(true);
-            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
-            v1.setDrawingCacheEnabled(false);
-
-            File imageFile = new File(mPath);
-
-            FileOutputStream outputStream = new FileOutputStream(imageFile);
-            int quality = 100;
-            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
-            outputStream.flush();
-            outputStream.close();
-
-            openScreenshot(imageFile);
-
-            Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_LONG).show();
-        } catch (Throwable e) {
-            // Several error may come out with file handling or OOM
-            e.printStackTrace();
-            Toast.makeText(getApplicationContext(), R.string.error_saved, Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void openScreenshot(File imageFile) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        Uri uri = Uri.fromFile(imageFile);
-        intent.setDataAndType(uri, "image/*");
-        startActivity(intent);
+        return mutableBitmap;
     }
 
     private void doPrint() {
