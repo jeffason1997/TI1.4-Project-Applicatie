@@ -3,6 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/parent_menu_print"
-        android:title="@string/get_diplome" />
+        android:id="@+id/parent_menu_diploma"
+        android:icon="@drawable/diploma_icon"
+        android:title="@string/get_diplome"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/parent_menu_achievements"
+        android:icon="@drawable/trophee_icon"
+        android:title="@string/parent_menu_achievement"
+        app:showAsAction="always" />
 </menu>

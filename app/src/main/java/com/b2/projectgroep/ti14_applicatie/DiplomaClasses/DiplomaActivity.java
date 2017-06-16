@@ -82,12 +82,6 @@ public class DiplomaActivity extends AppCompatActivity {
                 dispatchTakePictureIntent();
                 return true;
             }
-            case R.id.diploma_menu_save_id : {
-                Intent i = new Intent(getApplicationContext(), AchievementActivity.class);
-                i.putExtra("pa", personalActivities);
-                startActivity(i);
-                return true;
-            }
             case R.id.diploma_menu_print_id: {
                 doPrint();
                 Toast.makeText(getApplicationContext(), "Print", Toast.LENGTH_LONG).show();
