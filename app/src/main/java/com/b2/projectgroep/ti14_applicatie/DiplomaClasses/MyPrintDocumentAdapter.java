@@ -16,6 +16,8 @@ import android.print.PrintDocumentInfo;
 import android.print.PrintManager;
 import android.print.pdf.PrintedPdfDocument;
 
+import com.b2.projectgroep.ti14_applicatie.R;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -131,13 +133,13 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         paint.setTextSize(25);
         paint.setTextAlign(Paint.Align.CENTER);
         canvas.drawText(
-                "Gefeliciteerd bruh " + name +" "+ surname,
+                R.string.grats + name +" "+ surname,
                 canvas.getWidth()/2-50,
                 titleBaseLine,
                 paint);
 
         paint.setTextSize(14);
-        canvas.drawText("je hebt je Essteling diploma gehaald, nigguh", canvas.getWidth()/2-50, titleBaseLine + 25, paint);
+        canvas.drawText(""+ R.string.diploma_tekst, canvas.getWidth()/2-50, titleBaseLine + 25, paint);
 
         if (pagenumber % 2 == 0)
             paint.setColor(Color.RED);

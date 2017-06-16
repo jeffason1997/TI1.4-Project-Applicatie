@@ -57,6 +57,8 @@
     <string name="saved">Opgeslagen</string>
     <string name="error_saved">Error tijdens het opslaan</string>
     <string name="done">Klaar</string>
+    <string name="grats">Gefeliciteerd</string>
+    <string name="diploma_tekst">je hebt je Essteling diploma gehaald</string>
 
     <string name="achievement_blackmamba_ez">Check minstens 1 keer in bij de Black Mamba.</string>
     <string name="achievement_blackmamba">Check minstens 5 keer in bij de Black Mamba.</string>
