@@ -41,32 +41,45 @@ public class Employee_readActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_read);
 
-        dialog = new ProgressDialog(Employee_readActivity.this);
-        dialog.setMessage(getResources().getString(R.string.tag_nfc_card));
-        dialog.show();
+            parentName = (TextView) findViewById(R.id.Eread_nameParent_id);
+            parentSur = (TextView) findViewById(R.id.Eread_surnameParent_id);
+            phoneNumber = (TextView) findViewById(R.id.Eread_phonenumber_id);
+            phoneNumber.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (phoneNumber.getText().toString().contains("06"))
+                        dailContactPhone(phoneNumber.getText().toString());
+                }
+            });
+            childName = (TextView) findViewById(R.id.Eread_nameChild_id);
+            childSur = (TextView) findViewById(R.id.Eread_surnameChild_id);
+            cardNumber = (TextView) findViewById(R.id.Eread_cardNumber_id);
 
-        parentName = (TextView) findViewById(R.id.Eread_nameParent_id);
-        parentSur = (TextView) findViewById(R.id.Eread_surnameParent_id);
-        phoneNumber = (TextView) findViewById(R.id.Eread_phonenumber_id);
-        phoneNumber.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(phoneNumber.getText().toString().contains("06"))
-                dailContactPhone(phoneNumber.getText().toString());
-            }
-        });
-        childName = (TextView) findViewById(R.id.Eread_nameChild_id);
-        childSur = (TextView) findViewById(R.id.Eread_surnameChild_id);
-        cardNumber = (TextView) findViewById(R.id.Eread_cardNumber_id);
-
-        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        if (mNfcAdapter == null) {
-            Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
-            finish();
-            return;
+        if(Employee_Read_Info.getParentName() != null && Employee_Read_Info.getParentSur() != null && Employee_Read_Info.getPhoneNumber() != null && Employee_Read_Info.getChildName() != null && Employee_Read_Info.getChildSur() != null && Employee_Read_Info.getCardNumber() != null) {
+            parentName.setText(Employee_Read_Info.getParentName());
+            parentSur.setText(Employee_Read_Info.getParentSur());
+            phoneNumber.setTextColor(getResources().getColor(R.color.colorBlue));
+            SpannableString content = new SpannableString(Employee_Read_Info.getPhoneNumber());
+            content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+            phoneNumber.setText(content);
+            childName.setText(Employee_Read_Info.getChildName());
+            childSur.setText(Employee_Read_Info.getChildSur());
+            cardNumber.setText(Employee_Read_Info.getCardNumber());
+        } else {
+            dialog = new ProgressDialog(Employee_readActivity.this);
+            dialog.setMessage(getResources().getString(R.string.tag_nfc_card));
+            dialog.show();
         }
 
-        handleIntent(getIntent());
+
+            mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+            if (mNfcAdapter == null) {
+                Toast.makeText(this, R.string.no_nfc_supported, Toast.LENGTH_LONG).show();
+                finish();
+                return;
+            }
+
+//        handleIntent(getIntent());
     }
 
     private void dailContactPhone(String number){
@@ -193,33 +206,27 @@ public class Employee_readActivity extends AppCompatActivity {
                     System.err.println(ex);
                 }
 
-                String nameParent="";
-                String surParent="";
-                String phoneNum="";
-                String nameChild="";
-                String surChild="";
-                String cardNum="";
                  if(json!=null){
                      try {
-                         nameParent = json.getString("nameP");
-                         surParent = json.getString("surnameP");
-                         phoneNum = json.getString("phoneNumber");
-                         nameChild = json.getString("nameC");
-                         surChild = json.getString("surnameC");
-                         cardNum = json.getString("cardNumber");
+                         Employee_Read_Info.setParentName(json.getString("nameP"));
+                         Employee_Read_Info.setParentSur(json.getString("surnameP"));
+                         Employee_Read_Info.setPhoneNumber(json.getString("phoneNumber"));
+                         Employee_Read_Info.setChildName(json.getString("nameC"));
+                         Employee_Read_Info.setChildSur(json.getString("surnameC"));
+                         Employee_Read_Info.setCardNumber(json.getString("cardNumber"));
                      } catch (Exception e){
                          System.err.println(e);
                      }
                  }
-                parentName.setText(nameParent);
-                parentSur.setText(surParent);
+                parentName.setText(Employee_Read_Info.getParentName());
+                parentSur.setText(Employee_Read_Info.getParentSur());
                 phoneNumber.setTextColor(getResources().getColor(R.color.colorBlue));
-                SpannableString content = new SpannableString(phoneNum);
+                SpannableString content = new SpannableString(Employee_Read_Info.getPhoneNumber());
                 content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
                 phoneNumber.setText(content);
-                childName.setText(nameChild);
-                childSur.setText(surChild);
-                cardNumber.setText(cardNum);
+                childName.setText(Employee_Read_Info.getChildName());
+                childSur.setText(Employee_Read_Info.getChildSur());
+                cardNumber.setText(Employee_Read_Info.getCardNumber());
                 dialog.dismiss();
             }
         }

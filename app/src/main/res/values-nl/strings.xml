@@ -57,4 +57,16 @@
     <string name="saved">Opgeslagen</string>
     <string name="error_saved">Error tijdens het opslaan</string>
     <string name="done">Klaar</string>
+    <string name="parent_menu_achievement">Bekijk achievements</string>
+    <string name="grats">Gefeliciteerd</string>
+    <string name="diploma_tekst">je hebt je Essteling diploma gehaald</string>
+    <string name="achievement_blackmamba_ez">Check minstens 1 keer in bij de Black Mamba.</string>
+    <string name="achievement_blackmamba">Check minstens 5 keer in bij de Black Mamba.</string>
+    <string name="achievement_spirit_ez">Check minstens 1 keer in bij de Spirit Realm.</string>
+    <string name="achievement_spirit">Check minstens 5 keer in bij de Spirit Realm.</string>
+    <string name="achievement_fire_ez">Check minstens 1 keer in bij de Fire Machine.</string>
+    <string name="achievement_fire">Check minstens 5 keer in bij de Fire Machine.</string>
+    <string name="achievement_dream_ez">Check minstens 1 keer in bij de Dreamtown.</string>
+    <string name="achievement_dream">Check minstens 5 keer in bij de Dreamtown.</string>
+    <string name="achievement_allrides">Check in bij alle attracties.</string>
 </resources>
