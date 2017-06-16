@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
+package com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,9 +9,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses.Achievement;
 import com.b2.projectgroep.ti14_applicatie.R;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.Ride;
 
 import java.util.ArrayList;
 

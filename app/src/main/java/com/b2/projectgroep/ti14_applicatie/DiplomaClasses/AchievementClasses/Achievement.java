@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie.DiplomaClasses;
+package com.b2.projectgroep.ti14_applicatie.DiplomaClasses.AchievementClasses;
 
 import com.b2.projectgroep.ti14_applicatie.R;
 import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalActivity;

@@ -1,4 +1,4 @@
-package com.b2.projectgroep.ti14_applicatie;
+package com.b2.projectgroep.ti14_applicatie.LoginClasses;
 
 
 import android.app.ProgressDialog;
@@ -12,12 +12,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.LogInTask;
-import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.TableTaskListener;
-import com.b2.projectgroep.ti14_applicatie.AtRide.AtRideActivity;
+import com.b2.projectgroep.ti14_applicatie.AtRideClasses.AtRideActivity;
 import com.b2.projectgroep.ti14_applicatie.CardClasses.SelectCardActivity;
-import com.b2.projectgroep.ti14_applicatie.EmployeeClasses.Employee_chooseActivity;
-import com.b2.projectgroep.ti14_applicatie.RideClasses.PersonalListActivity;
+import com.b2.projectgroep.ti14_applicatie.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,26 +1,19 @@
-package com.b2.projectgroep.ti14_applicatie.AtRide;
+package com.b2.projectgroep.ti14_applicatie.AtRideClasses;
 
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Color;
-import android.icu.text.IDNA;
-import android.icu.util.Calendar;
 import android.nfc.FormatException;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
-import android.nfc.tech.NfcA;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.b2.projectgroep.ti14_applicatie.AsyncTaskClasses.InsertIntoTableTask;
