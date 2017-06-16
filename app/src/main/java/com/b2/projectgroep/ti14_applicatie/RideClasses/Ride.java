@@ -68,7 +68,7 @@ public class Ride implements Serializable {
 
     public static HashMap<String, Ride> getTestRides() {
         HashMap<String, Ride> toReturn = new HashMap<>();
-        toReturn.put("Black Mamba", new Ride(R.string.testRide_black_mamba_title, R.string.testRide_black_mamba_type, R.string.testRide_black_mamba_information, R.drawable.python));
+        toReturn.put("Black Mamba", new Ride(R.string.testRide_black_mamba_title, R.string.testRide_black_mamba_type, R.string.testRide_black_mamba_information, R.drawable.black_mamba));
         toReturn.put("Dreamtown", new Ride(R.string.testRide_dreamtown_title, R.string.testRide_dreamtown_type, R.string.testRide_dreamtown_information, R.drawable.draaimolen_nostalgisch));
         toReturn.put("Fire Machine", new Ride(R.string.testRide_fire_machine_title, R.string.testRide_fire_machine_type, R.string.testRide_fire_machine_information, R.drawable.fire_machine));
         toReturn.put("Spirit Realm", new Ride(R.string.testRide_spirit_realm_title, R.string.testRide_spirit_realm_type, R.string.testRide_spirit_realm_information, R.drawable.spirit_realm));
