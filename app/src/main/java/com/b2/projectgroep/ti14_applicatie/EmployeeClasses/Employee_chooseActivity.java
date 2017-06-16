@@ -54,7 +54,7 @@ public class Employee_chooseActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.diploma_menu_bar, menu);
+        menuInflater.inflate(R.menu.employee_choose_setup_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
