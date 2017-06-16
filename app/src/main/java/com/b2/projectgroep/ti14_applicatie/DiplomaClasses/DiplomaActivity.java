@@ -83,7 +83,9 @@ public class DiplomaActivity extends AppCompatActivity {
                 return true;
             }
             case R.id.diploma_menu_save_id : {
-                takeScreenshot();
+                Intent i = new Intent(getApplicationContext(), AchievementActivity.class);
+                i.putExtra("pa", personalActivities);
+                startActivity(i);
                 return true;
             }
             case R.id.diploma_menu_print_id: {

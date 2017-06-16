@@ -69,7 +69,7 @@
         android:layout_height="20dp"
         android:text="TextView"
         android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView12"
+        app:layout_constraintLeft_toRightOf="@+id/achievement_row_discription"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/ride_detailedImage"
@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/achievement_row_discription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lv_kind_tijd"
