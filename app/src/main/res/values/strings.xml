@@ -70,4 +70,6 @@
     <string name="achievement_dream_ez">Check in at the Dreamtown at least 1 time.</string>
     <string name="achievement_dream">Check in at the Dreamtown at least 5 times.</string>
     <string name="achievement_allrides">Check in at all the Rides.</string>
+    <string name="diploma_activity_text">Activities</string>
+    <string name="diploma_achievement_text">Achievements</string>
 </resources>
