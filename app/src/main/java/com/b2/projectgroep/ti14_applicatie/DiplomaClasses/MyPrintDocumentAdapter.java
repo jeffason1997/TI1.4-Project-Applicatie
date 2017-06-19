@@ -148,7 +148,7 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         if(page.getInfo().getPageNumber() == 0) {
 
             canvas.drawText(
-                    context.getResources().getString(R.string.grats) + " " + name + " " + surname,
+                    context.getResources().getString(R.string.grats) + " " + name + " ",
                     canvas.getWidth() / 10,
                     titleBaseLine,
                     paint);
@@ -183,7 +183,7 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
         } else if(page.getInfo().getPageNumber() == 1) {
             paint.setTextSize(25);
             canvas.drawText(
-            context.getResources().getString(R.string.grats) + " " + name + " " + surname, canvas.getWidth() / 10, titleBaseLine, paint);
+            context.getResources().getString(R.string.grats) + " " + name + " " , canvas.getWidth() / 10, titleBaseLine, paint);
 
             paint.setTextSize(14);
             canvas.drawText("" + context.getResources().getString(R.string.diploma_tekst), canvas.getWidth() / 10, titleBaseLine + 25, paint);
