@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -107,7 +108,6 @@ public class Employee_readActivity extends AppCompatActivity {
 
     private void handleIntent(Intent intent) {
         String action = intent.getAction();
-        System.out.println(action);
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
 
             String type = intent.getType();
@@ -193,11 +193,13 @@ public class Employee_readActivity extends AppCompatActivity {
             byte[] payload = record.getPayload();
             String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
             int languageCodeLength = payload[0] & 0063;
-            return new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
+            String message1 = new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
+            return message1;
         }
 
         @Override
         protected void onPostExecute(String result) {
+            result = new String(Base64.decode(result, 0));
             if (result != null) {
                 JSONObject json = null;
                 try{

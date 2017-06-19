@@ -10,10 +10,10 @@ import java.util.ArrayList;
  */
 
 public class Achievement {
-    int title;
-    int progress;
-    int maxProgress;
-    int image;
+    private int title;
+    private int progress;
+    private int maxProgress;
+    private int image;
 
     public Achievement(int title, int progress, int maxProgress, int image) {
         this.title = title;
@@ -88,5 +88,37 @@ public class Achievement {
             }
         }
         return completed;
+    }
+
+    public int getTitle() {
+        return title;
+    }
+
+    public void setTitle(int title) {
+        this.title = title;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
+    public int getMaxProgress() {
+        return maxProgress;
+    }
+
+    public void setMaxProgress(int maxProgress) {
+        this.maxProgress = maxProgress;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }

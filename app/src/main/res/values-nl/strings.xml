@@ -71,4 +71,6 @@
     <string name="achievement_dream_ez">Check minstens 1 keer in bij de Dreamtown.</string>
     <string name="achievement_dream">Check minstens 5 keer in bij de Dreamtown.</string>
     <string name="achievement_allrides">Check in bij alle attracties.</string>
+    <string name="diploma_activity_text">Activiteiten</string>
+    <string name="diploma_achievement_text">Prestaties</string>
 </resources>

@@ -180,7 +180,7 @@ public class DiplomaActivity extends AppCompatActivity {
         PrintManager printManager = (PrintManager) this.getSystemService(Context.PRINT_SERVICE);
         String jobName = this.getString(R.string.app_name) + " Document";
 
-        printManager.print(jobName, new MyPrintDocumentAdapter(this,name,surname), null);
+        printManager.print(jobName, new MyPrintDocumentAdapter(this,name,surname, personalActivities), null);
 
     }
 }

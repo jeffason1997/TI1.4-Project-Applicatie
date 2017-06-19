@@ -35,21 +35,21 @@ public class AchievementAdapter extends ArrayAdapter<Achievement> {
         }
 
         ImageView image = (ImageView) convertView.findViewById(R.id.achievement_row_image);
-        image.setImageDrawable(convertView.getResources().getDrawable(achievement.image));
+        image.setImageDrawable(convertView.getResources().getDrawable(achievement.getImage()));
 
         TextView discription = (TextView) convertView.findViewById(R.id.achievement_row_discription);
-        discription.setText(achievement.title);
+        discription.setText(achievement.getTitle());
 
         ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.achievement_row_progressbar);
         progressBar.setClickable(false);
-        progressBar.setMax(achievement.maxProgress);
-        progressBar.setProgress(achievement.progress);
+        progressBar.setMax(achievement.getMaxProgress());
+        progressBar.setProgress(achievement.getProgress());
 
         TextView percentage = (TextView) convertView.findViewById(R.id.achievement_row_percentage);
-        if(((double)(achievement.progress) / (double)(achievement.maxProgress)) >= 1) {
+        if(((double)(achievement.getProgress()) / (double)(achievement.getMaxProgress())) >= 1) {
             percentage.setText("100%");
         } else {
-            percentage.setText( (int) ((double)(achievement.progress) / (double)(achievement.maxProgress) * 100)  + "%");
+            percentage.setText( (int) ((double)(achievement.getProgress()) / (double)(achievement.getMaxProgress()) * 100)  + "%");
         }
 
         return convertView;
